@@ -36,7 +36,7 @@
 <body>
     <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
         <div class="layout-container flex h-full grow flex-col">
-            <!-- Header (sin cambios) -->
+            <!-- Header -->
             <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
                 <div class="flex items-center gap-4">
                     <div class="size-8">
@@ -79,7 +79,6 @@
                             <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Gestión de Cuentas</h1>
                             <p class="text-rhuta-dark-gray text-lg font-montserrat">Administra las cuentas de las empresas cliente</p>
                         </div>
-                        <!-- ##### BOTÓN PARA ABRIR LA MODAL ##### -->
                         <button id="open-modal-btn" class="bg-rhuta-green hover:bg-opacity-80 text-white font-semibold py-2 px-4 rounded-lg flex items-center gap-2 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                               <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
@@ -88,7 +87,6 @@
                         </button>
                     </div>
 
-                    <!-- Columna de la Lista de Cuentas (ahora ocupa todo el ancho) -->
                     <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
                         <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Listado de Cuentas</h2>
                          <div class="flex items-center gap-4 mb-4">
@@ -108,7 +106,8 @@
                                     <tr class="bg-rhuta-light-gray">
                                         <th class="p-4 text-sm font-semibold text-rhuta-dark-gray rounded-l-lg">Empresa</th>
                                         <th class="p-4 text-sm font-semibold text-rhuta-dark-gray">Etapa</th>
-                                        <th class="p-4 text-sm font-semibold text-rhuta-dark-gray">Candidatos Req.</th>
+                                        <!-- ##### MODIFICACIÓN AQUÍ ##### -->
+                                        <th class="p-4 text-sm font-semibold text-rhuta-dark-gray text-center">Candidatos Req.</th>
                                         <th class="p-4 text-sm font-semibold text-rhuta-dark-gray rounded-r-lg">Acciones</th>
                                     </tr>
                                 </thead>
@@ -146,17 +145,15 @@
         </div>
     </div>
 
-    <!-- ##### ESTRUCTURA DE LA VENTANA MODAL ##### -->
+    <!-- Ventana Modal -->
     <div id="account-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-full overflow-y-auto">
-            <!-- Cabecera de la Modal -->
             <div class="flex justify-between items-center p-4 border-b">
                 <h3 class="text-xl font-bold font-raleway text-rhuta-dark-gray">Crear Nueva Cuenta</h3>
                 <button class="close-modal-btn text-gray-400 hover:text-gray-600">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </div>
-            <!-- Cuerpo de la Modal (Formulario) -->
             <div class="p-6">
                 <form class="space-y-4">
                     <div><label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">NIT</label><input type="text" placeholder="Ej: 900.123.456-7" class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green"></div>
@@ -179,7 +176,6 @@
                     <div><label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Notas Adicionales</label><textarea placeholder="Añade cualquier información relevante..." rows="3" class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green"></textarea></div>
                 </form>
             </div>
-             <!-- Pie de la Modal -->
             <div class="flex justify-end gap-3 p-4 bg-gray-50 border-t rounded-b-lg">
                 <button class="close-modal-btn border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg font-semibold">Cancelar</button>
                 <button type="submit" class="bg-rhuta-green hover:bg-opacity-80 text-white px-4 py-2 rounded-lg font-semibold">Crear Cuenta</button>
@@ -187,28 +183,18 @@
         </div>
     </div>
 
-    <!-- ##### SCRIPT PARA LA INTERACTIVIDAD DE LA MODAL ##### -->
+    <!-- Script para la Modal -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById('account-modal');
             const openBtn = document.getElementById('open-modal-btn');
             const closeBtns = document.querySelectorAll('.close-modal-btn');
 
-            // Función para abrir la modal
             const openModal = () => modal.classList.remove('hidden');
-
-            // Función para cerrar la modal
             const closeModal = () => modal.classList.add('hidden');
 
-            // Event listener para el botón de abrir
             openBtn.addEventListener('click', openModal);
-
-            // Event listeners para todos los botones de cerrar
-            closeBtns.forEach(btn => {
-                btn.addEventListener('click', closeModal);
-            });
-
-            // Event listener para cerrar la modal con la tecla Escape
+            closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
             window.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                     closeModal();
