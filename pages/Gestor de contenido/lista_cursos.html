@@ -5,10 +5,10 @@
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600%3B700"
     />
 
-    <title>RHUTA - Lista de Cursos</title>
+    <title>RHUTA - Lista de Cursos (Mejorada)</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -19,9 +19,12 @@
             colors: {
               'rhuta-blue': '#00325E',
               'rhuta-green': '#00C694',
-              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-light-gray': '#F8F9FA',
+              'rhuta-gray': '#EAEEEF',
               'rhuta-dark-gray': '#1E1E1E',
-              'rhuta-border': '#DDE3EB'
+              'rhuta-border': '#DDE3EB',
+              'rhuta-success': '#28a745',
+              'rhuta-danger': '#dc3545'
             },
             fontFamily: {
               'raleway': ['Raleway', 'sans-serif'],
@@ -32,24 +35,21 @@
       }
     </script>
   </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+  <body class="bg-rhuta-light-gray">
+    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
-        <!-- Header con navegación de Gestor de Contenido -->
+        
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
           <div class="flex items-center gap-4">
             <div class="size-8">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
-                  fill="#00C694"
-                />
+                <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="#00C694" />
               </svg>
             </div>
             <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
           </div>
           <nav class="flex items-center gap-6">
-            <a href="lista_cursos.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+            <a href="lista_cursos.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green py-1">
               <span class="font-montserrat font-semibold">Lista de Cursos</span>
             </a>
             <a href="Construcción_microrutas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
@@ -60,35 +60,44 @@
             </button>
           </nav>
         </header>
-        <!-- Contenido principal -->
-        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
-          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
-            <!-- Título principal -->
-            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
-              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Lista de Cursos</h1>
-              <p class="text-rhuta-dark-gray text-lg font-montserrat">Gestión y administración de cursos de la plataforma RHUTA</p>
+
+        
+        <main class="px-4 sm:px-10 flex flex-1 justify-center py-8">
+          <div class="layout-content-container flex flex-col w-full max-w-7xl flex-1">
+            
+            <div class="flex flex-wrap justify-between items-center gap-4 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <div>
+                <h1 class="text-rhuta-dark-gray text-3xl md:text-4xl font-bold font-raleway leading-tight">Lista de Cursos</h1>
+                <p class="text-gray-500 text-base md:text-lg font-montserrat mt-1">Gestiona y administra los cursos de la plataforma.</p>
+              </div>
             </div>
-            <!-- Filtros y búsqueda -->
+
             <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 mb-6">
-              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-4">Filtros y Búsqueda</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-                <div>
-                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Buscar por título o descripción</label>
-                  <input type="text" placeholder="Ej: Python, Diseño UI, Marketing..." 
-                         class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+              <div class="flex items-center gap-3 mb-4">
+                <svg class="size-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.572a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                </svg>
+                <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway">Filtros y Búsqueda</h2>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
+                <div class="relative">
+                  <label for="search" class="block text-rhuta-dark-gray text-sm font-semibold font-montserrat mb-2">Buscar</label>
+                  <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 pt-8">
+                      <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg>
+                  </div>
+                  <input type="text" id="search" placeholder="Python, Diseño UI, Marketing..." class="w-full pl-10 pr-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
                 </div>
                 <div>
-                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Estado de Aprobación</label>
+                  <label class="block text-rhuta-dark-gray text-sm font-semibold font-montserrat mb-2">Estado de Aprobación</label>
                   <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
                     <option value="">Todos los estados</option>
-                    <option value="pendiente">Pendiente de Aprobación</option>
+                    <option value="pendiente">Pendiente</option>
                     <option value="aprobado">Aprobado</option>
                     <option value="rechazado">Rechazado</option>
-                    <option value="en_revision">En Revisión</option>
                   </select>
                 </div>
                 <div>
-                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Nivel de Dificultad</label>
+                  <label class="block text-rhuta-dark-gray text-sm font-semibold font-montserrat mb-2">Nivel de Dificultad</label>
                   <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
                     <option value="">Todos los niveles</option>
                     <option value="principiante">Principiante</option>
@@ -96,162 +105,170 @@
                     <option value="avanzado">Avanzado</option>
                   </select>
                 </div>
-                <div>
-                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Duración</label>
-                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
-                    <option value="">Todas las duraciones</option>
-                    <option value="1-2">1-2 semanas</option>
-                    <option value="3-4">3-4 semanas</option>
-                    <option value="5-8">5-8 semanas</option>
-                    <option value="9+">9+ semanas</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Proveedor</label>
-                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
-                    <option value="">Todos los proveedores</option>
-                    <option value="ivirtuo">iVirtuo</option>
-                    <option value="coursera">Coursera</option>
-                    <option value="udemy">Udemy</option>
-                    <option value="pluralsight">Pluralsight</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Temática</label>
-                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
-                    <option value="">Todas las temáticas</option>
-                    <option value="programacion">Programación</option>
-                    <option value="diseno">Diseño</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="negocios">Negocios</option>
-                    <option value="datos">Análisis de Datos</option>
-                  </select>
-                </div>
               </div>
               <div class="flex gap-4">
-                <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
-                  Filtrar Cursos
-                </button>
-                <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
-                  Limpiar Filtros
-                </button>
+                <button class="bg-rhuta-green hover:bg-opacity-80 text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">Filtrar Cursos</button>
+                <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-gray px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">Limpiar Filtros</button>
               </div>
             </div>
-            <div class="px-4 py-3 @container">
-              <div class="flex overflow-hidden rounded-lg border border-[#dbe6e3] bg-white">
-                <table class="flex-1">
-                  <thead>
-                    <tr class="bg-white">
-                      <th class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-120 px-4 py-3 text-left text-[#111816] w-[400px] text-sm font-medium leading-normal">Título</th>
-                      <th class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-240 px-4 py-3 text-left text-[#111816] w-[400px] text-sm font-medium leading-normal">
-                        Descripción
-                      </th>
-                      <th class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-360 px-4 py-3 text-left text-[#111816] w-[400px] text-sm font-medium leading-normal">
-                        Duración
-                      </th>
-                      <th class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-480 px-4 py-3 text-left text-[#111816] w-[400px] text-sm font-medium leading-normal">
-                        Dificultad
-                      </th>
-                      <th class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-600 px-4 py-3 text-left text-[#111816] w-60 text-[#5f8c7d] text-sm font-medium leading-normal">
-                        Acciones
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-t border-t-[#dbe6e3]">
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111816] text-sm font-normal leading-normal">
-                        Introducción a la Programación en Python
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        Aprende los fundamentos de la programación con Python, un lenguaje versátil y poderoso.
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        4 semanas
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        Principiante
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-600 h-[72px] px-4 py-2 w-60 text-[#5f8c7d] text-sm font-bold leading-normal tracking-[0.015em]">
-                        Aprobar | Rechazar | Ver Detalles
-                      </td>
-                    </tr>
-                    <tr class="border-t border-t-[#dbe6e3]">
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111816] text-sm font-normal leading-normal">
-                        Diseño de Interfaces de Usuario (UI)
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        Domina las técnicas de diseño UI para crear interfaces atractivas y funcionales.
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        6 semanas
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        Intermedio
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-600 h-[72px] px-4 py-2 w-60 text-[#5f8c7d] text-sm font-bold leading-normal tracking-[0.015em]">
-                        Aprobar | Rechazar | Ver Detalles
-                      </td>
-                    </tr>
-                    <tr class="border-t border-t-[#dbe6e3]">
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111816] text-sm font-normal leading-normal">
-                        Marketing Digital Estratégico
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        Desarrolla estrategias de marketing digital efectivas para alcanzar tus objetivos comerciales.
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        8 semanas
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">Avanzado</td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-600 h-[72px] px-4 py-2 w-60 text-[#5f8c7d] text-sm font-bold leading-normal tracking-[0.015em]">
-                        Aprobar | Rechazar | Ver Detalles
-                      </td>
-                    </tr>
-                    <tr class="border-t border-t-[#dbe6e3]">
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111816] text-sm font-normal leading-normal">
-                        Gestión de Proyectos Ágiles
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        Aprende a gestionar proyectos de forma ágil, adaptándote a los cambios y maximizando la eficiencia.
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        5 semanas
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        Intermedio
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-600 h-[72px] px-4 py-2 w-60 text-[#5f8c7d] text-sm font-bold leading-normal tracking-[0.015em]">
-                        Aprobar | Rechazar | Ver Detalles
-                      </td>
-                    </tr>
-                    <tr class="border-t border-t-[#dbe6e3]">
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111816] text-sm font-normal leading-normal">
-                        Análisis de Datos con R
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        Explora el análisis de datos utilizando R, una herramienta poderosa para la estadística y la visualización.
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">
-                        7 semanas
-                      </td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5f8c7d] text-sm font-normal leading-normal">Avanzado</td>
-                      <td class="table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-600 h-[72px] px-4 py-2 w-60 text-[#5f8c7d] text-sm font-bold leading-normal tracking-[0.015em]">
-                        Aprobar | Rechazar | Ver Detalles
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+
+            <div class="mb-4 flex flex-wrap items-center gap-2">
+                <span class="text-sm font-semibold text-gray-600">Filtros Activos:</span>
+                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-rhuta-green text-white">
+                    Nivel: Intermedio
+                    <button type="button" class="flex-shrink-0 -mr-0.5 h-3.5 w-3.5 inline-flex items-center justify-center rounded-full text-white hover:bg-white hover:text-rhuta-green focus:outline-none focus:bg-white focus:text-rhuta-green">
+                        <span class="sr-only">Remove</span>
+                        <svg class="h-2.5 w-2.5" stroke="currentColor" fill="none" viewBox="0 0 8 8"><path stroke-linecap="round" stroke-width="1.5" d="M1 1l6 6m0-6L1 7"></path></svg>
+                    </button>
+                </span>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border overflow-x-auto">
+              <table class="w-full text-sm text-left text-gray-500">
+                <thead class="text-xs text-rhuta-dark-gray uppercase bg-rhuta-gray">
+                  <tr>
+                    <th scope="col" class="px-6 py-4 font-bold font-raleway">Título</th>
+                    <th scope="col" class="px-6 py-4 font-bold font-raleway">Descripción</th>
+                    <th scope="col" class="px-6 py-4 font-bold font-raleway">Duración</th>
+                    <th scope="col" class="px-6 py-4 font-bold font-raleway">Dificultad</th>
+                    <th scope="col" class="px-6 py-4 font-bold font-raleway text-center">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-white border-b hover:bg-rhuta-light-gray">
+                    <th scope="row" class="px-6 py-4 font-medium text-rhuta-dark-gray whitespace-nowrap">Introducción a la Programación en Python</th>
+                    <td class="px-6 py-4">Aprende los fundamentos de la programación con Python, un lenguaje versátil y poderoso.</td>
+                    <td class="px-6 py-4 whitespace-nowrap">4 semanas</td>
+                    <td class="px-6 py-4"><span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Principiante</span></td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center justify-center gap-2">
+                        <button class="flex items-center gap-1.5 text-rhuta-success font-bold py-1 px-2 rounded hover:bg-green-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            Aprobar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-danger font-bold py-1 px-2 rounded hover:bg-red-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                            Rechazar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-blue font-bold py-1 px-2 rounded hover:bg-blue-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            Detalles
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="bg-rhuta-gray border-b hover:bg-rhuta-light-gray">
+                    <th scope="row" class="px-6 py-4 font-medium text-rhuta-dark-gray whitespace-nowrap">Diseño de Interfaces de Usuario (UI)</th>
+                    <td class="px-6 py-4">Domina las técnicas de diseño UI para crear interfaces atractivas y funcionales.</td>
+                    <td class="px-6 py-4 whitespace-nowrap">6 semanas</td>
+                    <td class="px-6 py-4"><span class="bg-orange-100 text-orange-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Intermedio</span></td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center justify-center gap-2">
+                        <button class="flex items-center gap-1.5 text-rhuta-success font-bold py-1 px-2 rounded hover:bg-green-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            Aprobar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-danger font-bold py-1 px-2 rounded hover:bg-red-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                            Rechazar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-blue font-bold py-1 px-2 rounded hover:bg-blue-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            Detalles
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                   <tr class="bg-white border-b hover:bg-rhuta-light-gray">
+                    <th scope="row" class="px-6 py-4 font-medium text-rhuta-dark-gray whitespace-nowrap">Marketing Digital Estratégico</th>
+                    <td class="px-6 py-4">Desarrolla estrategias de marketing digital efectivas para alcanzar tus objetivos comerciales.</td>
+                    <td class="px-6 py-4 whitespace-nowrap">8 semanas</td>
+                    <td class="px-6 py-4"><span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Avanzado</span></td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center justify-center gap-2">
+                        <button class="flex items-center gap-1.5 text-rhuta-success font-bold py-1 px-2 rounded hover:bg-green-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            Aprobar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-danger font-bold py-1 px-2 rounded hover:bg-red-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                            Rechazar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-blue font-bold py-1 px-2 rounded hover:bg-blue-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            Detalles
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="bg-rhuta-gray border-b hover:bg-rhuta-light-gray">
+                    <th scope="row" class="px-6 py-4 font-medium text-rhuta-dark-gray whitespace-nowrap">Gestión de Proyectos Ágiles</th>
+                    <td class="px-6 py-4">Aprende a gestionar proyectos de forma ágil, adaptándote a los cambios y maximizando la eficiencia.</td>
+                    <td class="px-6 py-4 whitespace-nowrap">5 semanas</td>
+                    <td class="px-6 py-4"><span class="bg-orange-100 text-orange-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Intermedio</span></td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center justify-center gap-2">
+                        <button class="flex items-center gap-1.5 text-rhuta-success font-bold py-1 px-2 rounded hover:bg-green-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            Aprobar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-danger font-bold py-1 px-2 rounded hover:bg-red-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                            Rechazar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-blue font-bold py-1 px-2 rounded hover:bg-blue-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            Detalles
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="bg-white border-b hover:bg-rhuta-light-gray">
+                    <th scope="row" class="px-6 py-4 font-medium text-rhuta-dark-gray whitespace-nowrap">Análisis de Datos con R</th>
+                    <td class="px-6 py-4">Explora el análisis de datos utilizando R, una herramienta poderosa para la estadística y la visualización.</td>
+                    <td class="px-6 py-4 whitespace-nowrap">7 semanas</td>
+                    <td class="px-6 py-4"><span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">Avanzado</span></td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center justify-center gap-2">
+                        <button class="flex items-center gap-1.5 text-rhuta-success font-bold py-1 px-2 rounded hover:bg-green-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            Aprobar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-danger font-bold py-1 px-2 rounded hover:bg-red-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                            Rechazar
+                        </button>
+                        <button class="flex items-center gap-1.5 text-rhuta-blue font-bold py-1 px-2 rounded hover:bg-blue-50 transition-colors">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            Detalles
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-rhuta-blue text-white py-2 mt-auto">
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <div class="size-5">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="#00C694" />
+                  </svg>
+                </div>
+                <p class="text-white text-base font-bold font-raleway">RHUTA</p>
               </div>
-              <style>
-                          @container(max-width:120px){.table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-120{display: none;}}
-                @container(max-width:240px){.table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-240{display: none;}}
-                @container(max-width:360px){.table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-360{display: none;}}
-                @container(max-width:480px){.table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-480{display: none;}}
-                @container(max-width:600px){.table-267d806b-8a3b-4432-ad6f-0afdb578241a-column-600{display: none;}}
-              </style>
+            </div>
+            <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+              <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
             </div>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   </body>

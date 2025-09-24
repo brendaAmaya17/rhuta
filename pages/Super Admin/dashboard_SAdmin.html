@@ -1,5 +1,6 @@
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
@@ -31,8 +32,8 @@
         }
       }
     </script>
-  </head>
-  <body>
+</head>
+<body>
     <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <!-- Header con navegación de Super Admin -->
@@ -48,26 +49,30 @@
             </div>
             <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
           </div>
-          <nav class="flex items-center gap-6">
-            <a href="dashboard_SAdmin.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
-              <span class="font-montserrat font-semibold">Dashboard</span>
-            </a>
-            <a href="gestion_usuarios.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
-              <span class="font-montserrat font-semibold">Gestión Usuarios</span>
-            </a>
-            <a href="gestion_planes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
-              <span class="font-montserrat font-semibold">Gestión Planes</span>
-            </a>
-            <a href="gestion_cuentas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
-              <span class="font-montserrat font-semibold">Gestión Cuentas</span>
-            </a>
-            <a href="seguimiento_pagos.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
-              <span class="font-montserrat font-semibold">Seguimiento Pagos</span>
-            </a>
-            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
-              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
-            </button>
-          </nav>
+            <!-- ##### BARRA DE NAVEGACIÓN CORREGIDA ##### -->
+            <nav class="flex items-center gap-6">
+                <a href="dashboard_SAdmin.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+                    <span class="font-montserrat font-semibold">Dashboard</span>
+                </a>
+                <a href="gestion_usuarios.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                    <span class="font-montserrat font-semibold">Gestión Usuarios</span>
+                </a>
+                <a href="gestion_planes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                    <span class="font-montserrat font-semibold">Gestión Planes</span>
+                </a>
+                <a href="gestion_cuentas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                    <span class="font-montserrat font-semibold">Gestión Cuentas</span>
+                </a>
+                <a href="seguimiento_pagos.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                    <span class="font-montserrat font-semibold">Seguimiento Pagos</span>
+                </a>
+                <a href="configuracion_microrutas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                    <span class="font-montserrat font-semibold">Configuración Micro Rutas</span>
+                </a>
+                <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+                    <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+                </button>
+            </nav>
         </header>
         <!-- Contenido principal -->
         <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
@@ -255,7 +260,25 @@
             </div>
           </div>
         </div>
+        <!-- Footer -->
+        <footer class="bg-rhuta-blue text-white py-2 mt-auto">
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <div class="size-5">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="#00C694" />
+                  </svg>
+                </div>
+                <p class="text-white text-base font-bold font-raleway">RHUTA</p>
+              </div>
+            </div>
+            <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+              <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
-  </body>
+</body>
 </html>
