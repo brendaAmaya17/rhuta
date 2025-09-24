@@ -1,0 +1,348 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Micro Rutas de Aprendizaje</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación del aspirante -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="dashboard_aspirante.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Dashboard</span>
+            </a>
+            <a href="perfil_aspirante.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Mi Perfil</span>
+            </a>
+            <a href="busqueda_vacantes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Buscar Vacantes</span>
+            </a>
+            <a href="micro_rutas.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Micro Rutas</span>
+            </a>
+            <a href="postulaciones.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Postulaciones</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Micro Rutas de Aprendizaje</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Desarrolla tus habilidades con rutas personalizadas</p>
+            </div>
+            <!-- Micro Rutas Disponibles -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+              <!-- Micro Ruta 1 -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 hover:shadow-md transition-shadow">
+                <div class="mb-4">
+                  <div class="w-full h-48 bg-gradient-to-br from-rhuta-blue to-rhuta-green rounded-lg mb-4 flex items-center justify-center">
+                    <div class="text-center text-white">
+                      <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                      </svg>
+                      <p class="font-montserrat font-semibold">Análisis de Datos</p>
+                    </div>
+                  </div>
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-2">Fundamentos del Análisis de Datos</h3>
+                  <p class="text-rhuta-dark-gray text-sm font-montserrat mb-4">
+                    Explora los conceptos centrales del análisis de datos, incluyendo la recopilación, limpieza y visualización de datos.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">Básico</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">8 horas</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">5 cursos</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <div class="w-16 bg-rhuta-light-gray rounded-full h-2">
+                        <div class="bg-rhuta-green h-2 rounded-full" style="width: 75%"></div>
+                      </div>
+                      <span class="text-rhuta-dark-gray text-sm font-montserrat">75%</span>
+                    </div>
+                    <a href="acceso_ivirtuo.html" class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg font-semibold font-montserrat transition-colors text-sm inline-block">
+                      Continuar
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Micro Ruta 2 -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 hover:shadow-md transition-shadow">
+                <div class="mb-4">
+                  <div class="w-full h-48 bg-gradient-to-br from-rhuta-green to-rhuta-blue rounded-lg mb-4 flex items-center justify-center">
+                    <div class="text-center text-white">
+                      <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                      </svg>
+                      <p class="font-montserrat font-semibold">Desarrollo Web</p>
+                    </div>
+                  </div>
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-2">Desarrollo Frontend con React</h3>
+                  <p class="text-rhuta-dark-gray text-sm font-montserrat mb-4">
+                    Aprende a crear interfaces de usuario modernas y responsivas usando React, JavaScript ES6+ y herramientas de desarrollo.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">Intermedio</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">12 horas</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">7 cursos</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <div class="w-16 bg-rhuta-light-gray rounded-full h-2">
+                        <div class="bg-rhuta-green h-2 rounded-full" style="width: 30%"></div>
+                      </div>
+                      <span class="text-rhuta-dark-gray text-sm font-montserrat">30%</span>
+                    </div>
+                    <a href="acceso_ivirtuo.html" class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg font-semibold font-montserrat transition-colors text-sm inline-block">
+                      Continuar
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Micro Ruta 3 -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 hover:shadow-md transition-shadow">
+                <div class="mb-4">
+                  <div class="w-full h-48 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg mb-4 flex items-center justify-center">
+                    <div class="text-center text-white">
+                      <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <p class="font-montserrat font-semibold">Marketing Digital</p>
+                    </div>
+                  </div>
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-2">Marketing Digital y Redes Sociales</h3>
+                  <p class="text-rhuta-dark-gray text-sm font-montserrat mb-4">
+                    Domina las estrategias de marketing digital, SEO, SEM y gestión de redes sociales para empresas.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">Básico</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">6 horas</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">4 cursos</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <div class="w-16 bg-rhuta-light-gray rounded-full h-2">
+                        <div class="bg-rhuta-green h-2 rounded-full" style="width: 0%"></div>
+                      </div>
+                      <span class="text-rhuta-dark-gray text-sm font-montserrat">0%</span>
+                    </div>
+                    <a href="acceso_ivirtuo.html" class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg font-semibold font-montserrat transition-colors text-sm inline-block">
+                      Comenzar
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sección de Progreso General -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 mb-8">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Mi Progreso de Aprendizaje</h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-rhuta-green font-raleway mb-2">3</div>
+                  <p class="text-rhuta-dark-gray font-montserrat">Micro Rutas Activas</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-rhuta-blue font-raleway mb-2">24</div>
+                  <p class="text-rhuta-dark-gray font-montserrat">Horas Completadas</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-rhuta-green font-raleway mb-2">2</div>
+                  <p class="text-rhuta-dark-gray font-montserrat">Certificados Obtenidos</p>
+                </div>
+              </div>
+            </div>
+            <!-- Sección de Cursos Recientes -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Cursos Recientes</h2>
+              <div class="space-y-4">
+                <div class="flex items-center gap-4 p-4 bg-rhuta-light-gray rounded-lg">
+                  <div class="flex items-center justify-center rounded-lg bg-rhuta-blue shrink-0 size-12">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-rhuta-dark-gray text-lg font-semibold font-montserrat">Introducción al Análisis de Datos</h3>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat">Nivel: Básico</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat">2h 15m</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <div class="w-16 bg-rhuta-border rounded-full h-2">
+                        <div class="bg-rhuta-green h-2 rounded-full" style="width: 100%"></div>
+                      </div>
+                      <span class="text-rhuta-green text-xs font-montserrat">Completado</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 bg-rhuta-light-gray rounded-lg">
+                  <div class="flex items-center justify-center rounded-lg bg-rhuta-blue shrink-0 size-12">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-rhuta-dark-gray text-lg font-semibold font-montserrat">Limpieza y Preparación de Datos</h3>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat">Nivel: Intermedio</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat">3h 45m</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <div class="w-16 bg-rhuta-border rounded-full h-2">
+                        <div class="bg-rhuta-green h-2 rounded-full" style="width: 80%"></div>
+                      </div>
+                      <span class="text-rhuta-green text-xs font-montserrat">En Progreso</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 bg-rhuta-light-gray rounded-lg">
+                  <div class="flex items-center justify-center rounded-lg bg-rhuta-blue shrink-0 size-12">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-rhuta-dark-gray text-lg font-semibold font-montserrat">Técnicas de Visualización de Datos</h3>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat">Nivel: Avanzado</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat">4h 20m</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <div class="w-16 bg-rhuta-border rounded-full h-2">
+                        <div class="bg-rhuta-green h-2 rounded-full" style="width: 0%"></div>
+                      </div>
+                      <span class="text-rhuta-dark-gray text-xs font-montserrat">Pendiente</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Sección de Micro Rutas Recomendadas -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Micro Rutas Recomendadas</h2>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-rhuta-light-gray rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <div class="w-full h-32 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg mb-4 flex items-center justify-center">
+                    <div class="text-center text-white">
+                      <svg class="w-12 h-12 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <p class="font-montserrat font-semibold text-sm">Machine Learning</p>
+                    </div>
+                  </div>
+                  <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway mb-2">Conceptos Básicos de Aprendizaje Automático</h3>
+                  <p class="text-rhuta-dark-gray text-sm font-montserrat mb-4">
+                    Comienza con los conceptos y algoritmos de aprendizaje automático. Aprende a construir modelos predictivos.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">Intermedio</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">10 horas</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">6 cursos</span>
+                  </div>
+                  <button class="w-full bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg font-semibold font-montserrat transition-colors text-sm">
+                    Inscribirse
+                  </button>
+                </div>
+
+                <div class="bg-rhuta-light-gray rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <div class="w-full h-32 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg mb-4 flex items-center justify-center">
+                    <div class="text-center text-white">
+                      <svg class="w-12 h-12 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                      </svg>
+                      <p class="font-montserrat font-semibold text-sm">Cloud Computing</p>
+                    </div>
+                  </div>
+                  <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway mb-2">Esenciales de la Computación en la Nube</h3>
+                  <p class="text-rhuta-dark-gray text-sm font-montserrat mb-4">
+                    Explora los fundamentos de la computación en la nube, incluyendo servicios y modelos de implementación.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">Básico</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">7 horas</span>
+                    <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-xs font-montserrat">4 cursos</span>
+                  </div>
+                  <button class="w-full bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg font-semibold font-montserrat transition-colors text-sm">
+                    Inscribirse
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer -->
+        <footer class="bg-rhuta-blue text-white py-2">
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <div class="size-5">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                      fill="#00C694"
+                    />
+                  </svg>
+                </div>
+                <p class="text-white text-base font-bold font-raleway">RHUTA</p>
+              </div>
+            </div>
+            <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+              <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

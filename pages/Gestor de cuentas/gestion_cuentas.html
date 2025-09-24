@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Raleway:wght@600;700&family=Montserrat:wght@400;600&display=swap"
+    />
+
+    <title>RHUTA - Gestión de Cuentas</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-rhuta-light-gray font-montserrat">
+    <div class="min-h-screen flex flex-col">
+      <!-- Header -->
+      <header class="flex items-center justify-between px-10 py-4 bg-rhuta-blue border-b border-rhuta-border">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                fill="#00C694"
+              />
+            </svg>
+          </div>
+          <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+        </div>
+        <nav class="flex gap-6">
+          <a href="gestion_cuentas.html" class="text-rhuta-green border-b-2 border-rhuta-green font-semibold">Gestión de Cuentas</a>
+          <a href="registro_cuentas.html" class="text-white hover:text-rhuta-green font-semibold transition">Registro de Cuentas</a>
+          <a href="seguimiento_pagos.html" class="text-white hover:text-rhuta-green font-semibold transition">Seguimiento de Pagos</a>
+          <button class="text-white hover:text-red-400 font-semibold transition">Cerrar Sesión</button>
+        </nav>
+      </header>
+
+      <!-- Main -->
+      <main class="flex-1 px-10 py-8 flex justify-center">
+        <div class="w-full max-w-7xl">
+          <!-- Título -->
+          <div class="bg-white p-6 rounded-xl shadow-md border border-rhuta-border mb-6">
+            <h1 class="text-4xl font-bold font-raleway text-rhuta-dark-gray">Gestión de Cuentas</h1>
+            <p class="text-lg text-gray-600 mt-2">Administra cuentas de usuarios y empresas en la plataforma RHUTA</p>
+          </div>
+
+          <!-- Lista de Cuentas -->
+          <div class="bg-white rounded-xl shadow-md border border-rhuta-border p-6">
+            <h2 class="text-xl font-bold text-rhuta-dark-gray mb-4">Lista de Cuentas</h2>
+            <!-- Filtros -->
+            <div class="flex flex-wrap gap-4 mb-6">
+              <select class="rounded-lg border-gray-300 focus:ring-rhuta-green focus:border-rhuta-green px-3 pr-10 py-2">
+                <option>Todas las etapas</option>
+                <option>Etapa 1</option>
+                <option>Etapa 2</option>
+                <option>Etapa 3</option>
+              </select>
+              <select class="rounded-lg border-gray-300 focus:ring-rhuta-green focus:border-rhuta-green px-3 pr-10 py-2">
+                <option>Todos los planes</option>
+                <option>Plan A</option>
+                <option>Plan B</option>
+                <option>Plan C</option>
+              </select>
+            </div>
+
+            <!-- Tabla -->
+            <div class="overflow-hidden rounded-lg border border-rhuta-border">
+              <table class="min-w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">ID de Empresa</th>
+                    <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Etapa</th>
+                    <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Plan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
+                    <td class="px-4 py-3 text-sm text-gray-800">Empresa 123</td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Etapa 1</span></td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">Plan A</span></td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
+                    <td class="px-4 py-3 text-sm text-gray-800">Empresa 456</td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Etapa 2</span></td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">Plan B</span></td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
+                    <td class="px-4 py-3 text-sm text-gray-800">Empresa 789</td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Etapa 1</span></td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">Plan C</span></td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
+                    <td class="px-4 py-3 text-sm text-gray-800">Empresa 101</td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">Etapa 3</span></td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Plan A</span></td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
+                    <td class="px-4 py-3 text-sm text-gray-800">Empresa 112</td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Etapa 2</span></td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">Plan B</span></td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
+                    <td class="px-4 py-3 text-sm text-gray-800">Empresa 221</td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Etapa 1</span></td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">Plan A</span></td>
+                  </tr>
+                  <tr class="odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
+                    <td class="px-4 py-3 text-sm text-gray-800">Empresa 334</td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">Etapa 3</span></td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Plan C</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Botones de acciones -->
+            <div class="flex flex-wrap gap-3 mt-6">
+              <button class="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg font-semibold hover:bg-blue-200 transition">Asignar Plan</button>
+              <button class="px-4 py-2 bg-green-100 text-green-800 rounded-lg font-semibold hover:bg-green-200 transition">Asignar Micro-Ruta</button>
+              <button class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-lg font-semibold hover:bg-yellow-200 transition">Cambiar Etapa</button>
+              <button class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg font-semibold hover:bg-gray-200 transition">Añadir Nota</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

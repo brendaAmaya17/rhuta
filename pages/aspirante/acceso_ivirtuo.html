@@ -1,0 +1,229 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Acceso a iVirtuo</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación del aspirante -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="dashboard_aspirante.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Dashboard</span>
+            </a>
+            <a href="perfil_aspirante.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Mi Perfil</span>
+            </a>
+            <a href="busqueda_vacantes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Buscar Vacantes</span>
+            </a>
+            <a href="micro_rutas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Micro Rutas</span>
+            </a>
+            <a href="postulaciones.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Postulaciones</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+
+        <!-- Contenido principal -->
+        <div class="flex flex-1 flex-col bg-rhuta-light-gray">
+          <!-- Barra de información -->
+          <div class="bg-white border-b border-rhuta-border px-10 py-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <button onclick="goBack()" class="flex items-center gap-2 text-rhuta-blue hover:text-rhuta-green transition-colors">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                  <span class="font-montserrat font-semibold">Volver a Micro Rutas</span>
+                </button>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 bg-rhuta-green rounded-full"></div>
+                  <span class="text-rhuta-dark-gray font-montserrat text-sm">Conectado a iVirtuo</span>
+                </div>
+                <button onclick="refreshIframe()" class="flex items-center gap-2 text-rhuta-blue hover:text-rhuta-green transition-colors">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                  </svg>
+                  <span class="font-montserrat font-semibold">Actualizar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Título de la página -->
+          <div class="bg-white px-10 py-6 border-b border-rhuta-border">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-rhuta-green bg-opacity-10 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-rhuta-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </div>
+              <div>
+                <h1 class="text-3xl font-bold font-raleway text-rhuta-dark-gray">Acceso a iVirtuo</h1>
+                <p class="text-rhuta-dark-gray font-montserrat opacity-80">
+                  Plataforma de aprendizaje integrada con RHUTA
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Iframe de iVirtuo -->
+          <div class="flex-1 p-6">
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border h-full">
+              <iframe
+                id="ivirtuo-iframe"
+                src="https://ivirtuo.com/"
+                class="w-full h-full rounded-lg"
+                frameborder="0"
+                allowfullscreen
+                title="iVirtuo - Plataforma de Aprendizaje"
+                onload="handleIframeLoad()"
+                onerror="handleIframeError()"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Barra inferior con información -->
+          <div class="bg-white border-t border-rhuta-border px-10 py-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-rhuta-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="text-rhuta-dark-gray font-montserrat text-sm">Sincronizado con tu progreso en RHUTA</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-rhuta-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="text-rhuta-dark-gray font-montserrat text-sm">Los certificados se sincronizan automáticamente</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <a href="micro_rutas.html" class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg font-semibold font-montserrat transition-colors text-sm">
+                  Volver a Micro Rutas
+                </a>
+                <button onclick="openInNewTab()" class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg font-semibold font-montserrat transition-colors text-sm">
+                  Abrir en Nueva Pestaña
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Footer -->
+      <footer class="bg-rhuta-blue text-white py-2">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+              <div class="size-5">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                    fill="#00C694"
+                  />
+                </svg>
+              </div>
+              <p class="text-white text-base font-bold font-raleway">RHUTA</p>
+            </div>
+          </div>
+          <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+            <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+      function refreshIframe() {
+        const iframe = document.getElementById('ivirtuo-iframe');
+        iframe.src = iframe.src;
+      }
+
+      function openInNewTab() {
+        window.open('https://ivirtuo.com/', '_blank');
+      }
+
+      function handleIframeLoad() {
+        console.log('iVirtuo iframe cargado correctamente');
+        // Aquí se puede agregar lógica adicional cuando el iframe se carga
+      }
+
+      function handleIframeError() {
+        console.error('Error al cargar el iframe de iVirtuo');
+        // Aquí se puede mostrar un mensaje de error al usuario
+        alert('Error al cargar la plataforma iVirtuo. Por favor, intenta nuevamente o abre en una nueva pestaña.');
+      }
+
+      // Detectar si el iframe está bloqueado por políticas de seguridad
+      window.addEventListener('message', function(event) {
+        // Manejar mensajes del iframe si es necesario
+        if (event.origin === 'https://ivirtuo.com') {
+          console.log('Mensaje recibido de iVirtuo:', event.data);
+        }
+      });
+
+      // Mostrar mensaje si el iframe no se puede cargar
+      setTimeout(function() {
+        const iframe = document.getElementById('ivirtuo-iframe');
+        if (!iframe.contentDocument && !iframe.contentWindow) {
+          console.warn('El iframe puede estar bloqueado por políticas de seguridad del navegador');
+        }
+      }, 3000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,347 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Seguimiento de Pagos</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Gestor de Cuentas -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="gestion_cuentas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión de Cuentas</span>
+            </a>
+            <a href="registro_cuentas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Registro de Cuentas</span>
+            </a>
+            <a href="seguimiento_pagos.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Seguimiento de Pagos</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Seguimiento de Pagos</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Monitorea y gestiona los pagos de las cuentas registradas</p>
+            </div>
+            
+            <!-- Estadísticas de pagos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Ingresos del Mes</p>
+                    <p class="text-rhuta-green text-3xl font-bold font-raleway">$45,200</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-green bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-green" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Pagos Pendientes</p>
+                    <p class="text-yellow-500 text-3xl font-bold font-raleway">12</p>
+                  </div>
+                  <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Pagos Vencidos</p>
+                    <p class="text-red-500 text-3xl font-bold font-raleway">3</p>
+                  </div>
+                  <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Tasa de Cobro</p>
+                    <p class="text-rhuta-blue text-3xl font-bold font-raleway">94.2%</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-blue bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Filtros y búsqueda -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 mb-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-4">Filtros y Búsqueda</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Estado del Pago</label>
+                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    <option value="">Todos los estados</option>
+                    <option value="completado">Completado</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="vencido">Vencido</option>
+                    <option value="fallido">Fallido</option>
+                    <option value="reembolsado">Reembolsado</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Plan</label>
+                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    <option value="">Todos los planes</option>
+                    <option value="basico">Básico</option>
+                    <option value="premium">Premium</option>
+                    <option value="enterprise">Enterprise</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Método de Pago</label>
+                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    <option value="">Todos los métodos</option>
+                    <option value="tarjeta">Tarjeta de Crédito</option>
+                    <option value="transferencia">Transferencia Bancaria</option>
+                    <option value="pse">PSE</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Buscar por Empresa</label>
+                  <input type="text" placeholder="Ej: TechCorp, Acme Corp" 
+                         class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                  Filtrar
+                </button>
+                <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                  Limpiar Filtros
+                </button>
+              </div>
+            </div>
+            
+            <!-- Lista de pagos -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Historial de Pagos</h2>
+              
+              <!-- Pago 1 -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">TechCorp Solutions S.A.S.</h3>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Completado</span>
+                      <span class="bg-rhuta-blue bg-opacity-10 text-rhuta-blue px-3 py-1 rounded-full text-sm font-montserrat">Premium</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Monto:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$199.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Fecha de Pago:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">15 de Enero, 2024</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Método:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Tarjeta de Crédito</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Período:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Ene 2024 - Feb 2024</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Detalles del Pago:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Pago procesado exitosamente. Transacción ID: TXN-2024-001234. Recibo enviado por email.</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Recibo
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Reenviar Email
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pago 2 -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Innovate Marketing Group</h3>
+                      <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-montserrat">Pendiente</span>
+                      <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-montserrat">Básico</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Monto:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$99.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Fecha de Vencimiento:</p>
+                        <p class="text-red-500 text-sm font-montserrat">20 de Enero, 2024</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Método:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Transferencia Bancaria</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Período:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Ene 2024 - Feb 2024</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Estado del Pago:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Pago pendiente de confirmación. Se espera la transferencia bancaria en las próximas 24 horas.</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Marcar como Pagado
+                    </button>
+                    <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Enviar Recordatorio
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pago 3 -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Global Tech Enterprises</h3>
+                      <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-montserrat">Vencido</span>
+                      <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-montserrat">Enterprise</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Monto:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$399.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Fecha de Vencimiento:</p>
+                        <p class="text-red-500 text-sm font-montserrat">10 de Enero, 2024</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Método:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">PSE</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Días de Retraso:</p>
+                        <p class="text-red-500 text-sm font-montserrat">15 días</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Estado del Pago:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Pago vencido. Se han enviado 3 recordatorios. Considerar suspensión de servicios.</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Suspender Cuenta
+                    </button>
+                    <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Enviar Recordatorio
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Paginación -->
+              <div class="flex items-center justify-between mt-6 pt-6 border-t border-rhuta-border">
+                <p class="text-rhuta-dark-gray text-sm font-montserrat">Mostrando 1-3 de 45 pagos</p>
+                <div class="flex gap-2">
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">
+                    Anterior
+                  </button>
+                  <button class="px-3 py-2 bg-rhuta-blue text-white rounded-lg text-sm font-montserrat">1</button>
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">2</button>
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">3</button>
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">
+                    Siguiente
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

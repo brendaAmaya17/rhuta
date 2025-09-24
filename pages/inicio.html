@@ -1,0 +1,347 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Plataforma Integral de Talento y Empleabilidad</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header principal -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-white">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway">RHUTA</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-rhuta-dark-gray text-sm font-medium leading-normal hover:text-rhuta-green transition-colors" href="#inicio">Inicio</a>
+              <a class="text-rhuta-dark-gray text-sm font-medium leading-normal hover:text-rhuta-green transition-colors" href="#servicios">Servicios</a>
+              <a class="text-rhuta-dark-gray text-sm font-medium leading-normal hover:text-rhuta-green transition-colors" href="#casos-exito">Casos de Éxito</a>
+              <a class="text-rhuta-dark-gray text-sm font-medium leading-normal hover:text-rhuta-green transition-colors" href="#recursos">Recursos</a>
+              <a class="text-rhuta-dark-gray text-sm font-medium leading-normal hover:text-rhuta-green transition-colors" href="#contacto">Contacto</a>
+            </div>
+            <div class="flex gap-4">
+              <a href="login.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray text-sm font-semibold leading-normal tracking-[0.015em] transition-colors">
+                <span class="truncate">Iniciar Sesión</span>
+              </a>
+              <a href="registro.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-rhuta-green hover:bg-[#00A77F] text-white text-sm font-semibold leading-normal tracking-[0.015em] transition-colors">
+                <span class="truncate">Registrarse</span>
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="inicio" class="bg-gradient-to-br from-rhuta-blue to-rhuta-green text-white py-20">
+          <div class="px-10 flex flex-1 justify-center">
+            <div class="layout-content-container flex flex-col max-w-6xl flex-1">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h1 class="text-5xl font-bold font-raleway leading-tight mb-6">
+                    Conecta Talento con Oportunidades
+                  </h1>
+                  <p class="text-xl font-montserrat leading-relaxed mb-8 opacity-90">
+                    La plataforma integral que une MiPymes con profesionales calificados. 
+                    Descubre micro rutas de aprendizaje, encuentra el trabajo ideal y 
+                    construye el futuro del talento en Colombia.
+                  </p>
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="registro.html" class="bg-white text-rhuta-blue hover:bg-rhuta-light-gray px-8 py-4 rounded-lg font-semibold font-montserrat transition-colors text-center">
+                      Comenzar Ahora
+                    </a>
+                    <a href="#servicios" class="border-2 border-white text-white hover:bg-white hover:text-rhuta-blue px-8 py-4 rounded-lg font-semibold font-montserrat transition-colors text-center">
+                      Conocer Más
+                    </a>
+                  </div>
+                </div>
+                <div class="flex justify-center">
+                  <div class="w-96 h-96 bg-white bg-opacity-10 rounded-full flex items-center justify-center">
+                    <svg class="w-48 h-48 text-white opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Estadísticas -->
+        <section class="bg-rhuta-light-gray py-16">
+          <div class="px-10 flex flex-1 justify-center">
+            <div class="layout-content-container flex flex-col max-w-6xl flex-1">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                  <div class="text-4xl font-bold font-raleway text-rhuta-green mb-2">2,847</div>
+                  <div class="text-rhuta-dark-gray font-montserrat">Usuarios Activos</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold font-raleway text-rhuta-blue mb-2">1,247</div>
+                  <div class="text-rhuta-dark-gray font-montserrat">Empresas Registradas</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold font-raleway text-rhuta-green mb-2">24</div>
+                  <div class="text-rhuta-dark-gray font-montserrat">Micro Rutas Disponibles</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold font-raleway text-rhuta-blue mb-2">94%</div>
+                  <div class="text-rhuta-dark-gray font-montserrat">Tasa de Empleabilidad</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="py-20">
+          <div class="px-10 flex flex-1 justify-center">
+            <div class="layout-content-container flex flex-col max-w-6xl flex-1">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-raleway text-rhuta-dark-gray mb-4">Nuestros Servicios</h2>
+                <p class="text-xl font-montserrat text-rhuta-dark-gray opacity-80">
+                  Soluciones integrales para el desarrollo del talento y la empleabilidad
+                </p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-8 hover:shadow-md transition-shadow">
+                  <div class="w-16 h-16 bg-rhuta-green bg-opacity-10 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-rhuta-green" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold font-raleway text-rhuta-dark-gray mb-4">Micro Rutas de Aprendizaje</h3>
+                  <p class="text-rhuta-dark-gray font-montserrat opacity-80">
+                    Rutas personalizadas de formación que conectan con las necesidades reales del mercado laboral.
+                  </p>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-8 hover:shadow-md transition-shadow">
+                  <div class="w-16 h-16 bg-rhuta-blue bg-opacity-10 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold font-raleway text-rhuta-dark-gray mb-4">Conecta Talento</h3>
+                  <p class="text-rhuta-dark-gray font-montserrat opacity-80">
+                    Plataforma que une profesionales calificados con MiPymes que buscan talento especializado.
+                  </p>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-8 hover:shadow-md transition-shadow">
+                  <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold font-raleway text-rhuta-dark-gray mb-4">Desarrollo Profesional</h3>
+                  <p class="text-rhuta-dark-gray font-montserrat opacity-80">
+                    Herramientas y recursos para el crecimiento profesional y la mejora de competencias.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Casos de Éxito -->
+        <section id="casos-exito" class="bg-rhuta-light-gray py-20">
+          <div class="px-10 flex flex-1 justify-center">
+            <div class="layout-content-container flex flex-col max-w-6xl flex-1">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-raleway text-rhuta-dark-gray mb-4">Casos de Éxito</h2>
+                <p class="text-xl font-montserrat text-rhuta-dark-gray opacity-80">
+                  Historias reales de profesionales y empresas que han transformado su futuro
+                </p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Caso 1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-8">
+                  <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-rhuta-green bg-opacity-10 rounded-full flex items-center justify-center">
+                      <svg class="w-8 h-8 text-rhuta-green" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold font-raleway text-rhuta-dark-gray">María González</h4>
+                      <p class="text-rhuta-blue font-montserrat">Desarrolladora Frontend</p>
+                    </div>
+                  </div>
+                  <p class="text-rhuta-dark-gray font-montserrat italic mb-4">
+                    "Las micro rutas de RHUTA me ayudaron a especializarme en React y TypeScript. 
+                    En 3 meses conseguí un trabajo en una empresa tech con un salario 40% mayor."
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">+40% Salario</span>
+                    <span class="bg-rhuta-blue bg-opacity-10 text-rhuta-blue px-3 py-1 rounded-full text-sm font-montserrat">3 meses</span>
+                  </div>
+                </div>
+
+                <!-- Caso 2 -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-8">
+                  <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-rhuta-blue bg-opacity-10 rounded-full flex items-center justify-center">
+                      <svg class="w-8 h-8 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="text-lg font-bold font-raleway text-rhuta-dark-gray">TechCorp Solutions</h4>
+                      <p class="text-rhuta-blue font-montserrat">Empresa de Tecnología</p>
+                    </div>
+                  </div>
+                  <p class="text-rhuta-dark-gray font-montserrat italic mb-4">
+                    "RHUTA nos ha permitido encontrar desarrolladores talentosos y bien preparados. 
+                    Hemos reducido el tiempo de contratación en un 60% y mejorado la calidad del talento."
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">-60% Tiempo</span>
+                    <span class="bg-rhuta-blue bg-opacity-10 text-rhuta-blue px-3 py-1 rounded-full text-sm font-montserrat">+25% Calidad</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-rhuta-blue text-white py-20">
+          <div class="px-10 flex flex-1 justify-center">
+            <div class="layout-content-container flex flex-col max-w-4xl flex-1 text-center">
+              <h2 class="text-4xl font-bold font-raleway mb-6">
+                ¿Listo para Transformar tu Futuro?
+              </h2>
+              <p class="text-xl font-montserrat mb-8 opacity-90">
+                Únete a miles de profesionales y empresas que ya están construyendo el futuro del talento en Colombia.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="registro.html" class="bg-rhuta-green hover:bg-[#00A77F] text-white px-8 py-4 rounded-lg font-semibold font-montserrat transition-colors">
+                  Comenzar Gratis
+                </a>
+                <a href="#contacto" class="border-2 border-white text-white hover:bg-white hover:text-rhuta-blue px-8 py-4 rounded-lg font-semibold font-montserrat transition-colors">
+                  Contactar Ventas
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contacto" class="bg-rhuta-dark-gray text-white py-16">
+          <div class="px-10 flex flex-1 justify-center">
+            <div class="layout-content-container flex flex-col max-w-6xl flex-1">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Logo y descripción -->
+                <div class="lg:col-span-2">
+                  <div class="flex items-center gap-4 mb-6">
+                    <div class="size-8">
+                      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                          fill="#00C694"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold font-raleway">RHUTA</h3>
+                  </div>
+                  <p class="text-rhuta-light-gray font-montserrat mb-6">
+                    La plataforma integral que conecta talento con oportunidades, 
+                    impulsando el desarrollo profesional y la empleabilidad en Colombia.
+                  </p>
+                  <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-rhuta-blue rounded-lg flex items-center justify-center hover:bg-rhuta-green transition-colors">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-rhuta-blue rounded-lg flex items-center justify-center hover:bg-rhuta-green transition-colors">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                      </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-rhuta-blue rounded-lg flex items-center justify-center hover:bg-rhuta-green transition-colors">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div>
+                  <h4 class="text-lg font-bold font-raleway mb-4">Enlaces Rápidos</h4>
+                  <ul class="space-y-2">
+                    <li><a href="#inicio" class="text-rhuta-light-gray hover:text-rhuta-green transition-colors font-montserrat">Inicio</a></li>
+                    <li><a href="#servicios" class="text-rhuta-light-gray hover:text-rhuta-green transition-colors font-montserrat">Servicios</a></li>
+                    <li><a href="#casos-exito" class="text-rhuta-light-gray hover:text-rhuta-green transition-colors font-montserrat">Casos de Éxito</a></li>
+                    <li><a href="login.html" class="text-rhuta-light-gray hover:text-rhuta-green transition-colors font-montserrat">Iniciar Sesión</a></li>
+                    <li><a href="registro.html" class="text-rhuta-light-gray hover:text-rhuta-green transition-colors font-montserrat">Registrarse</a></li>
+                  </ul>
+                </div>
+
+                <!-- Contacto -->
+                <div>
+                  <h4 class="text-lg font-bold font-raleway mb-4">Contacto</h4>
+                  <ul class="space-y-2">
+                    <li class="text-rhuta-light-gray font-montserrat">📧 info@rhuta.com</li>
+                    <li class="text-rhuta-light-gray font-montserrat">📞 +57 (1) 234-5678</li>
+                    <li class="text-rhuta-light-gray font-montserrat">📍 Bogotá, Colombia</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="border-t border-rhuta-border pt-8 text-center">
+                <p class="text-rhuta-light-gray font-montserrat">
+                  © 2024 RHUTA. Todos los derechos reservados. | 
+                  <a href="#" class="hover:text-rhuta-green transition-colors">Política de Privacidad</a> | 
+                  <a href="#" class="hover:text-rhuta-green transition-colors">Términos de Servicio</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

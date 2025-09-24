@@ -1,0 +1,347 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Gestión de Tickets</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Moderador de Comunidad -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="cola_moderacion.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Cola de Moderación</span>
+            </a>
+            <a href="gestion_tickets.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Gestión de Tickets</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Gestión de Tickets</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Gestiona tickets de soporte y atención al cliente</p>
+            </div>
+            
+            <!-- Estadísticas de tickets -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Tickets Abiertos</p>
+                    <p class="text-yellow-500 text-3xl font-bold font-raleway">24</p>
+                  </div>
+                  <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Resueltos Hoy</p>
+                    <p class="text-rhuta-green text-3xl font-bold font-raleway">12</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-green bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-green" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Tiempo Promedio</p>
+                    <p class="text-rhuta-blue text-3xl font-bold font-raleway">4.2h</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-blue bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Satisfacción</p>
+                    <p class="text-purple-500 text-3xl font-bold font-raleway">4.8/5</p>
+                  </div>
+                  <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Filtros y búsqueda -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 mb-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-4">Filtros y Búsqueda</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Estado</label>
+                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    <option value="">Todos los estados</option>
+                    <option value="abierto">Abierto</option>
+                    <option value="en_progreso">En Progreso</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="resuelto">Resuelto</option>
+                    <option value="cerrado">Cerrado</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Prioridad</label>
+                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    <option value="">Todas las prioridades</option>
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                    <option value="critica">Crítica</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Categoría</label>
+                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    <option value="">Todas las categorías</option>
+                    <option value="tecnico">Técnico</option>
+                    <option value="facturacion">Facturación</option>
+                    <option value="cuenta">Cuenta</option>
+                    <option value="funcionalidad">Funcionalidad</option>
+                    <option value="bug">Bug</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Buscar por ID o Usuario</label>
+                  <input type="text" placeholder="Ej: #12345, usuario@email.com" 
+                         class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                  Filtrar
+                </button>
+                <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                  Limpiar Filtros
+                </button>
+              </div>
+            </div>
+            
+            <!-- Lista de tickets -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Tickets de Soporte</h2>
+              
+              <!-- Ticket 1 -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Ticket #12345: Problema con Inicio de Sesión</h3>
+                      <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-montserrat">Abierto</span>
+                      <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-montserrat">Alta</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Usuario:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Alex Johnson (alex.johnson@email.com)</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Fecha:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">15 de Enero, 2024</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Categoría:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Técnico</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Asignado a:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">María García</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Descripción:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">El usuario no puede iniciar sesión en su cuenta. Ha intentado restablecer su contraseña pero sigue teniendo problemas. El error aparece después de ingresar las credenciales correctas.</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Responder
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Asignar
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ticket 2 -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Ticket #12346: Error en Procesamiento de Pago</h3>
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-montserrat">En Progreso</span>
+                      <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-montserrat">Media</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Usuario:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">María Rodríguez (maria.rodriguez@email.com)</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Fecha:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">16 de Enero, 2024</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Categoría:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Facturación</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Asignado a:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Carlos López</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Descripción:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">El usuario reporta un error durante el procesamiento de pago. La transacción falló pero aún así se le cobró. Necesita un reembolso inmediato.</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Responder
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Asignar
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ticket 3 -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Ticket #12347: Solicitud de Nueva Funcionalidad</h3>
+                      <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-montserrat">Resuelto</span>
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-montserrat">Baja</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Usuario:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">David Lee (david.lee@email.com)</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Fecha:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">17 de Enero, 2024</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Categoría:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Funcionalidad</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Asignado a:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">Ana Martínez</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Descripción:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">El usuario solicita una nueva funcionalidad para exportar datos en formato CSV. Esta característica sería muy útil para su flujo de trabajo.</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Responder
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Asignar
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Paginación -->
+              <div class="flex items-center justify-between mt-6 pt-6 border-t border-rhuta-border">
+                <p class="text-rhuta-dark-gray text-sm font-montserrat">Mostrando 1-3 de 24 tickets</p>
+                <div class="flex gap-2">
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">
+                    Anterior
+                  </button>
+                  <button class="px-3 py-2 bg-rhuta-blue text-white rounded-lg text-sm font-montserrat">1</button>
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">2</button>
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">3</button>
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">
+                    Siguiente
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

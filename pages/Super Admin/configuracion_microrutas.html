@@ -1,0 +1,381 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Configuración de Micro Rutas</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Super Admin -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="dashboard_SAdmin.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Dashboard</span>
+            </a>
+            <a href="gestion_usuarios.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión Usuarios</span>
+            </a>
+            <a href="gestion_planes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión Planes</span>
+            </a>
+            <a href="gestion_cuentas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión Cuentas</span>
+            </a>
+            <a href="seguimiento_pagos.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Seguimiento Pagos</span>
+            </a>
+            <a href="configuracion_microrutas.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Configuración Micro Rutas</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Configuración de Micro Rutas</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Administra y configura las micro rutas de aprendizaje de la plataforma</p>
+            </div>
+            
+            <!-- Estadísticas de micro rutas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Total Micro Rutas</p>
+                    <p class="text-rhuta-green text-3xl font-bold font-raleway">24</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-green bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-green" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Micro Rutas Activas</p>
+                    <p class="text-rhuta-blue text-3xl font-bold font-raleway">18</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-blue bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">En Revisión</p>
+                    <p class="text-yellow-500 text-3xl font-bold font-raleway">4</p>
+                  </div>
+                  <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Estudiantes Activos</p>
+                    <p class="text-purple-500 text-3xl font-bold font-raleway">1,247</p>
+                  </div>
+                  <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Filtros y búsqueda -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 mb-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-4">Filtros y Búsqueda</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Estado</label>
+                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    <option value="">Todos los estados</option>
+                    <option value="activa">Activa</option>
+                    <option value="inactiva">Inactiva</option>
+                    <option value="en_revision">En Revisión</option>
+                    <option value="borrador">Borrador</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Vertical</label>
+                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    <option value="">Todas las verticales</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="diseno">Diseño</option>
+                    <option value="negocios">Negocios</option>
+                    <option value="datos">Análisis de Datos</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Nivel</label>
+                  <select class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    <option value="">Todos los niveles</option>
+                    <option value="principiante">Principiante</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Buscar por nombre</label>
+                  <input type="text" placeholder="Ej: Desarrollo Frontend" 
+                         class="w-full px-4 py-2 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                  Filtrar
+                </button>
+                <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                  Limpiar Filtros
+                </button>
+                <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                  Crear Nueva Micro Ruta
+                </button>
+              </div>
+            </div>
+            
+            <!-- Lista de micro rutas -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Micro Rutas Configuradas</h2>
+              
+              <!-- Micro Ruta 1 -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Desarrollo Frontend Moderno</h3>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Activa</span>
+                      <span class="bg-rhuta-blue bg-opacity-10 text-rhuta-blue px-3 py-1 rounded-full text-sm font-montserrat">Tecnología</span>
+                      <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-montserrat">Intermedio</span>
+                    </div>
+                    <p class="text-rhuta-dark-gray font-montserrat mb-4">
+                      Micro ruta completa para aprender desarrollo frontend moderno con React, TypeScript y herramientas actuales.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Cursos:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">8 cursos</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Duración:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">12 semanas</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Estudiantes:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">342 activos</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Completación:</p>
+                        <p class="text-rhuta-green text-sm font-montserrat">78%</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Cursos incluidos:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">HTML/CSS Básico, JavaScript ES6+, React Fundamentals, TypeScript, Git y GitHub, Testing con Jest, Deploy con Vercel, Proyecto Final</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Editar
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Duplicar
+                    </button>
+                    <button class="border border-red-300 text-red-600 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Desactivar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Micro Ruta 2 -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Marketing Digital Avanzado</h3>
+                      <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-montserrat">En Revisión</span>
+                      <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-montserrat">Marketing</span>
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-montserrat">Avanzado</span>
+                    </div>
+                    <p class="text-rhuta-dark-gray font-montserrat mb-4">
+                      Micro ruta especializada en estrategias avanzadas de marketing digital y análisis de datos.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Cursos:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">6 cursos</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Duración:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">10 semanas</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Estudiantes:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">156 activos</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Completación:</p>
+                        <p class="text-rhuta-green text-sm font-montserrat">65%</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Cursos incluidos:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">SEO Avanzado, Google Ads, Facebook Ads, Analytics, Email Marketing, Estrategias de Contenido</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Aprobar
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Revisar
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Comentarios
+                    </button>
+                    <button class="border border-red-300 text-red-600 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Rechazar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Micro Ruta 3 -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Diseño UX/UI</h3>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Activa</span>
+                      <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-montserrat">Diseño</span>
+                      <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-montserrat">Principiante</span>
+                    </div>
+                    <p class="text-rhuta-dark-gray font-montserrat mb-4">
+                      Micro ruta introductoria al diseño de experiencia de usuario e interfaces.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Cursos:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">5 cursos</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Duración:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">8 semanas</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Estudiantes:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">289 activos</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Completación:</p>
+                        <p class="text-rhuta-green text-sm font-montserrat">82%</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Cursos incluidos:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Fundamentos UX, Diseño UI, Figma, Prototipado, Testing de Usabilidad</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Editar
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Duplicar
+                    </button>
+                    <button class="border border-red-300 text-red-600 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Desactivar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Paginación -->
+              <div class="flex items-center justify-between mt-6 pt-6 border-t border-rhuta-border">
+                <p class="text-rhuta-dark-gray text-sm font-montserrat">Mostrando 1-3 de 24 micro rutas</p>
+                <div class="flex gap-2">
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">
+                    Anterior
+                  </button>
+                  <button class="px-3 py-2 bg-rhuta-blue text-white rounded-lg text-sm font-montserrat">1</button>
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">2</button>
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">3</button>
+                  <button class="px-3 py-2 border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray rounded-lg text-sm font-montserrat transition-colors">
+                    Siguiente
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

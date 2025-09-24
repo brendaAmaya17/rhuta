@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Perfil de Aspirante</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Empresa -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="dashboard_empresa.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Dashboard</span>
+            </a>
+            <a href="gestion_vacantes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión de Vacantes</span>
+            </a>
+            <a href="gestion_empleos.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión de Empleos</span>
+            </a>
+            <a href="perfil_aspirante.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Perfil Aspirante</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Perfil de Aspirante</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Revisa el perfil completo del candidato</p>
+            </div>
+            
+            <!-- Información del aspirante -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <!-- Columna izquierda - Información personal -->
+              <div class="lg:col-span-1 space-y-6">
+                <!-- Tarjeta de información personal -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                  <div class="text-center mb-6">
+                    <div class="w-24 h-24 bg-rhuta-green bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg class="w-12 h-12 text-rhuta-green" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway">María González</h2>
+                    <p class="text-rhuta-blue text-lg font-montserrat">Desarrolladora Frontend</p>
+                    <div class="flex items-center justify-center gap-2 mt-2">
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Disponible</span>
+                    </div>
+                  </div>
+                  
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-5 h-5 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-rhuta-dark-gray font-montserrat">Bogotá, Colombia</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg class="w-5 h-5 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                      </svg>
+                      <span class="text-rhuta-dark-gray font-montserrat">maria.gonzalez@email.com</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg class="w-5 h-5 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                      </svg>
+                      <span class="text-rhuta-dark-gray font-montserrat">+57 300 123 4567</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg class="w-5 h-5 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-rhuta-dark-gray font-montserrat">28 años</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tarjeta de habilidades -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-4">Habilidades Técnicas</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">React</span>
+                    <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">JavaScript</span>
+                    <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">TypeScript</span>
+                    <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Node.js</span>
+                    <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">MongoDB</span>
+                    <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Git</span>
+                    <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Figma</span>
+                  </div>
+                </div>
+
+                <!-- Tarjeta de idiomas -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-4">Idiomas</h3>
+                  <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                      <span class="text-rhuta-dark-gray font-montserrat">Español</span>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-2 py-1 rounded text-sm font-montserrat">Nativo</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-rhuta-dark-gray font-montserrat">Inglés</span>
+                      <span class="bg-rhuta-blue bg-opacity-10 text-rhuta-blue px-2 py-1 rounded text-sm font-montserrat">Avanzado</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-rhuta-dark-gray font-montserrat">Portugués</span>
+                      <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-montserrat">Intermedio</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Columna derecha - Información detallada -->
+              <div class="lg:col-span-2 space-y-6">
+                <!-- Resumen profesional -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-4">Resumen Profesional</h3>
+                  <p class="text-rhuta-dark-gray font-montserrat leading-relaxed">
+                    Desarrolladora Frontend con más de 4 años de experiencia en el desarrollo de aplicaciones web modernas. 
+                    Especializada en React, TypeScript y Node.js, con experiencia en el diseño de interfaces de usuario 
+                    intuitivas y responsivas. Apasionada por la tecnología y el aprendizaje continuo, siempre buscando 
+                    nuevas formas de mejorar la experiencia del usuario.
+                  </p>
+                </div>
+
+                <!-- Experiencia laboral -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-4">Experiencia Laboral</h3>
+                  <div class="space-y-6">
+                    <div class="border-l-4 border-rhuta-green pl-4">
+                      <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Desarrolladora Frontend Senior</h4>
+                        <span class="text-rhuta-blue text-sm font-montserrat">2022 - Presente</span>
+                      </div>
+                      <p class="text-rhuta-green font-montserrat font-semibold mb-2">TechCorp Solutions</p>
+                      <p class="text-rhuta-dark-gray font-montserrat text-sm">
+                        Lideré el desarrollo de aplicaciones web utilizando React y TypeScript. 
+                        Implementé mejoras de rendimiento que redujeron el tiempo de carga en un 40%. 
+                        Colaboré con equipos de diseño y backend para crear experiencias de usuario excepcionales.
+                      </p>
+                    </div>
+                    
+                    <div class="border-l-4 border-rhuta-blue pl-4">
+                      <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Desarrolladora Frontend</h4>
+                        <span class="text-rhuta-blue text-sm font-montserrat">2020 - 2022</span>
+                      </div>
+                      <p class="text-rhuta-green font-montserrat font-semibold mb-2">Digital Agency Pro</p>
+                      <p class="text-rhuta-dark-gray font-montserrat text-sm">
+                        Desarrollé interfaces de usuario para múltiples clientes utilizando React y Vue.js. 
+                        Participé en la planificación y ejecución de proyectos web desde el concepto hasta la implementación.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Educación -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-4">Educación</h3>
+                  <div class="space-y-4">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h4 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Ingeniería de Sistemas</h4>
+                        <p class="text-rhuta-green font-montserrat font-semibold">Universidad Nacional de Colombia</p>
+                        <p class="text-rhuta-blue font-montserrat text-sm">2016 - 2020</p>
+                      </div>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Graduada</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Certificaciones -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-4">Certificaciones</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="border border-rhuta-border rounded-lg p-4">
+                      <h4 class="text-rhuta-dark-gray font-bold font-raleway mb-2">React Developer Certification</h4>
+                      <p class="text-rhuta-blue font-montserrat text-sm mb-2">Meta - 2023</p>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-2 py-1 rounded text-sm font-montserrat">Válida</span>
+                    </div>
+                    <div class="border border-rhuta-border rounded-lg p-4">
+                      <h4 class="text-rhuta-dark-gray font-bold font-raleway mb-2">AWS Cloud Practitioner</h4>
+                      <p class="text-rhuta-blue font-montserrat text-sm mb-2">Amazon Web Services - 2022</p>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-2 py-1 rounded text-sm font-montserrat">Válida</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Acciones -->
+                <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                  <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-4">Acciones</h3>
+                  <div class="flex flex-wrap gap-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                      Programar Entrevista
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                      Enviar Mensaje
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                      Agregar a Favoritos
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                      Descargar CV
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer -->
+        <footer class="bg-rhuta-blue text-white py-2">
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <div class="size-5">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                      fill="#00C694"
+                    />
+                  </svg>
+                </div>
+                <p class="text-white text-base font-bold font-raleway">RHUTA</p>
+              </div>
+            </div>
+            <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+              <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </footer>
+        </div>
+    </div>
+  </body>
+</html>

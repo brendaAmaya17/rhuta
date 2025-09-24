@@ -1,0 +1,334 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Búsqueda de Vacantes</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación del aspirante -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="dashboard_aspirante.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Dashboard</span>
+            </a>
+            <a href="perfil_aspirante.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Mi Perfil</span>
+            </a>
+            <a href="busqueda_vacantes.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Buscar Vacantes</span>
+            </a>
+            <a href="micro_rutas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Micro Rutas</span>
+            </a>
+            <a href="postulaciones.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Postulaciones</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Búsqueda de Vacantes</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Encuentra tu próximo empleo ideal</p>
+            </div>
+            <!-- Barra de búsqueda principal -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 mb-6">
+              <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Campo de búsqueda -->
+                <div class="flex-1">
+                  <label class="block text-rhuta-dark-gray text-sm font-semibold font-montserrat mb-2">Buscar por palabras clave</label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="h-5 w-5 text-rhuta-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="Ej: Desarrollador Frontend, Marketing Digital, Contador..."
+                      class="w-full pl-10 pr-4 py-3 border border-rhuta-border rounded-lg focus:ring-2 focus:ring-rhuta-blue focus:border-rhuta-blue font-montserrat"
+                    />
+                  </div>
+                </div>
+                
+                <!-- Filtro por ubicación -->
+                <div class="lg:w-64">
+                  <label class="block text-rhuta-dark-gray text-sm font-semibold font-montserrat mb-2">Ubicación</label>
+                  <select class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:ring-2 focus:ring-rhuta-blue focus:border-rhuta-blue font-montserrat">
+                    <option value="">Todas las ubicaciones</option>
+                    <option value="bogota">Bogotá</option>
+                    <option value="medellin">Medellín</option>
+                    <option value="cali">Cali</option>
+                    <option value="barranquilla">Barranquilla</option>
+                    <option value="remoto">Remoto</option>
+                  </select>
+                </div>
+                
+                <!-- Filtro por sector -->
+                <div class="lg:w-64">
+                  <label class="block text-rhuta-dark-gray text-sm font-semibold font-montserrat mb-2">Sector</label>
+                  <select class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:ring-2 focus:ring-rhuta-blue focus:border-rhuta-blue font-montserrat">
+                    <option value="">Todos los sectores</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="salud">Salud</option>
+                    <option value="educacion">Educación</option>
+                    <option value="finanzas">Finanzas</option>
+                    <option value="retail">Retail</option>
+                  </select>
+                </div>
+                
+                <!-- Botón de búsqueda -->
+                <div class="flex items-end">
+                  <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-8 py-3 rounded-lg font-semibold font-montserrat transition-colors min-h-[44px] min-w-[44px]">
+                    Buscar
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Filtros adicionales -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-4 mb-6">
+              <div class="flex flex-wrap gap-3">
+                <button class="flex items-center gap-2 px-4 py-2 bg-rhuta-light-gray hover:bg-rhuta-green hover:text-white rounded-lg transition-colors font-montserrat text-sm">
+                  <span>Apto Egresados</span>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 bg-rhuta-light-gray hover:bg-rhuta-green hover:text-white rounded-lg transition-colors font-montserrat text-sm">
+                  <span>Tiempo Completo</span>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 bg-rhuta-light-gray hover:bg-rhuta-green hover:text-white rounded-lg transition-colors font-montserrat text-sm">
+                  <span>Presencial</span>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 bg-rhuta-light-gray hover:bg-rhuta-green hover:text-white rounded-lg transition-colors font-montserrat text-sm">
+                  <span>Salario</span>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 bg-rhuta-light-gray hover:bg-rhuta-green hover:text-white rounded-lg transition-colors font-montserrat text-sm">
+                  <span>Experiencia</span>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- Resultados de vacantes -->
+            <div class="space-y-4">
+              <!-- Vacante 1 -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 hover:shadow-md transition-shadow">
+                <div class="flex flex-col lg:flex-row gap-6">
+                  <div class="flex-1">
+                    <div class="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-2">Desarrollador Full Stack</h3>
+                        <p class="text-rhuta-blue text-lg font-semibold font-montserrat mb-2">TechCorp Solutions</p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">Bogotá</span>
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">Tiempo Completo</span>
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">Presencial</span>
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">$3.500.000 - $4.500.000</span>
+                        </div>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Publicado hace 2 días</p>
+                        <p class="text-rhuta-green text-sm font-semibold font-montserrat">Activa</p>
+                      </div>
+                    </div>
+                    <p class="text-rhuta-dark-gray text-base font-montserrat leading-relaxed mb-4">
+                      Buscamos un desarrollador full stack con experiencia en React, Node.js y bases de datos SQL. El candidato ideal debe ser capaz de trabajar en todas las capas de la aplicación, desde el frontend hasta el backend.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">React</span>
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">Node.js</span>
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">PostgreSQL</span>
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">TypeScript</span>
+                    </div>
+                    <div class="flex gap-3">
+                      <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                        Postular
+                      </button>
+                      <button class="border border-rhuta-blue text-rhuta-blue hover:bg-rhuta-blue hover:text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                        Ver Detalles
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Vacante 2 -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 hover:shadow-md transition-shadow">
+                <div class="flex flex-col lg:flex-row gap-6">
+                  <div class="flex-1">
+                    <div class="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-2">Analista de Datos</h3>
+                        <p class="text-rhuta-blue text-lg font-semibold font-montserrat mb-2">DataInsights Corp</p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">Medellín</span>
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">Tiempo Completo</span>
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">Híbrido</span>
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">$2.800.000 - $3.800.000</span>
+                        </div>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Publicado hace 1 día</p>
+                        <p class="text-rhuta-green text-sm font-semibold font-montserrat">Activa</p>
+                      </div>
+                    </div>
+                    <p class="text-rhuta-dark-gray text-base font-montserrat leading-relaxed mb-4">
+                      Estamos buscando un analista de datos para unirse a nuestro equipo. El candidato debe tener experiencia en el análisis de grandes conjuntos de datos, la creación de informes y la identificación de tendencias.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">Python</span>
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">SQL</span>
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">Tableau</span>
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">Power BI</span>
+                    </div>
+                    <div class="flex gap-3">
+                      <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                        Postular
+                      </button>
+                      <button class="border border-rhuta-blue text-rhuta-blue hover:bg-rhuta-blue hover:text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                        Ver Detalles
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Vacante 3 -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 hover:shadow-md transition-shadow">
+                <div class="flex flex-col lg:flex-row gap-6">
+                  <div class="flex-1">
+                    <div class="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway mb-2">Diseñador UX/UI</h3>
+                        <p class="text-rhuta-blue text-lg font-semibold font-montserrat mb-2">Creative Studio</p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">Cali</span>
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">Tiempo Completo</span>
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">Remoto</span>
+                          <span class="px-3 py-1 bg-rhuta-light-gray text-rhuta-dark-gray rounded-full text-sm font-montserrat">$2.500.000 - $3.500.000</span>
+                        </div>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Publicado hace 3 días</p>
+                        <p class="text-rhuta-green text-sm font-semibold font-montserrat">Activa</p>
+                      </div>
+                    </div>
+                    <p class="text-rhuta-dark-gray text-base font-montserrat leading-relaxed mb-4">
+                      Buscamos un diseñador UX/UI creativo y orientado al detalle para trabajar en nuestros productos. El candidato debe tener un portafolio sólido y experiencia en el diseño de interfaces intuitivas y atractivas.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">Figma</span>
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">Adobe XD</span>
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">Sketch</span>
+                      <span class="px-3 py-1 bg-rhuta-blue text-white rounded-full text-sm font-montserrat">Principle</span>
+                    </div>
+                    <div class="flex gap-3">
+                      <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                        Postular
+                      </button>
+                      <button class="border border-rhuta-blue text-rhuta-blue hover:bg-rhuta-blue hover:text-white px-6 py-2 rounded-lg font-semibold font-montserrat transition-colors">
+                        Ver Detalles
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paginación -->
+            <div class="flex justify-center mt-8">
+              <div class="flex items-center gap-2">
+                <button class="px-4 py-2 border border-rhuta-border rounded-lg text-rhuta-dark-gray hover:bg-rhuta-light-gray transition-colors font-montserrat">
+                  Anterior
+                </button>
+                <button class="px-4 py-2 bg-rhuta-blue text-white rounded-lg font-montserrat">1</button>
+                <button class="px-4 py-2 border border-rhuta-border rounded-lg text-rhuta-dark-gray hover:bg-rhuta-light-gray transition-colors font-montserrat">2</button>
+                <button class="px-4 py-2 border border-rhuta-border rounded-lg text-rhuta-dark-gray hover:bg-rhuta-light-gray transition-colors font-montserrat">3</button>
+                <button class="px-4 py-2 border border-rhuta-border rounded-lg text-rhuta-dark-gray hover:bg-rhuta-light-gray transition-colors font-montserrat">
+                  Siguiente
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+         <!-- Footer -->
+        <footer class="bg-rhuta-blue text-white py-2">
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <div class="size-5">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                      fill="#00C694"
+                    />
+                  </svg>
+                </div>
+                <p class="text-white text-base font-bold font-raleway">RHUTA</p>
+              </div>
+            </div>
+            <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+              <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

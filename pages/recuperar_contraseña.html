@@ -1,0 +1,349 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Recuperar Contraseña</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header simple -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-white">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway">RHUTA</h2>
+          </div>
+          <a href="inicio.html" class="text-rhuta-dark-gray hover:text-rhuta-green transition-colors font-montserrat">
+            Volver al inicio
+          </a>
+        </header>
+
+        <!-- Contenido principal -->
+        <div class="flex flex-1 items-center justify-center py-12 px-4">
+          <div class="w-full max-w-md">
+            <!-- Tarjeta de recuperar contraseña -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-8">
+              <div class="text-center mb-8">
+                <div class="w-16 h-16 bg-rhuta-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-rhuta-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                  </svg>
+                </div>
+                <h1 class="text-3xl font-bold font-raleway text-rhuta-dark-gray mb-2">Recuperar Contraseña</h1>
+                <p class="text-rhuta-dark-gray font-montserrat opacity-80">
+                  Te enviaremos un enlace para restablecer tu contraseña
+                </p>
+              </div>
+
+              <!-- Formulario paso 1: Solicitar enlace -->
+              <form id="step1-form" class="space-y-6">
+                <div>
+                  <label for="email" class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">
+                    Correo Electrónico
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="tu@email.com"
+                    class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent font-montserrat"
+                    required
+                  />
+                  <p class="text-sm text-rhuta-dark-gray font-montserrat opacity-70 mt-2">
+                    Ingresa el correo electrónico asociado a tu cuenta
+                  </p>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-rhuta-green hover:bg-[#00A77F] text-white py-3 rounded-lg font-semibold font-montserrat transition-colors"
+                >
+                  Enviar Enlace de Recuperación
+                </button>
+              </form>
+
+              <!-- Mensaje de confirmación (oculto inicialmente) -->
+              <div id="confirmation-message" class="hidden text-center space-y-6">
+                <div class="w-16 h-16 bg-rhuta-green bg-opacity-10 rounded-full flex items-center justify-center mx-auto">
+                  <svg class="w-8 h-8 text-rhuta-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray mb-2">¡Enlace Enviado!</h2>
+                  <p class="text-rhuta-dark-gray font-montserrat opacity-80">
+                    Hemos enviado un enlace de recuperación a tu correo electrónico. 
+                    Revisa tu bandeja de entrada y sigue las instrucciones.
+                  </p>
+                </div>
+                <div class="bg-rhuta-light-gray rounded-lg p-4">
+                  <p class="text-sm text-rhuta-dark-gray font-montserrat">
+                    <strong>¿No recibiste el correo?</strong><br>
+                    Revisa tu carpeta de spam o solicita un nuevo enlace.
+                  </p>
+                </div>
+                <div class="space-y-3">
+                  <button
+                    onclick="resendEmail()"
+                    class="w-full bg-rhuta-blue hover:bg-[#001E3D] text-white py-3 rounded-lg font-semibold font-montserrat transition-colors"
+                  >
+                    Reenviar Enlace
+                  </button>
+                  <button
+                    onclick="backToStep1()"
+                    class="w-full border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray py-3 rounded-lg font-semibold font-montserrat transition-colors"
+                  >
+                    Usar Otro Correo
+                  </button>
+                </div>
+              </div>
+
+              <!-- Formulario paso 2: Nueva contraseña (oculto inicialmente) -->
+              <form id="step2-form" class="space-y-6 hidden">
+                <div class="text-center mb-6">
+                  <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray mb-2">Nueva Contraseña</h2>
+                  <p class="text-rhuta-dark-gray font-montserrat opacity-80">
+                    Ingresa tu nueva contraseña
+                  </p>
+                </div>
+
+                <div>
+                  <label for="new-password" class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">
+                    Nueva Contraseña
+                  </label>
+                  <div class="relative">
+                    <input
+                      type="password"
+                      id="new-password"
+                      placeholder="Mínimo 8 caracteres"
+                      class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent font-montserrat pr-12"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                      onclick="togglePassword('new-password')"
+                    >
+                      <svg class="h-5 w-5 text-rhuta-dark-gray" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="mt-2 space-y-1">
+                    <div class="flex items-center text-sm">
+                      <div id="length-check" class="w-4 h-4 rounded-full border-2 border-rhuta-border mr-2"></div>
+                      <span class="text-rhuta-dark-gray font-montserrat">Mínimo 8 caracteres</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <div id="uppercase-check" class="w-4 h-4 rounded-full border-2 border-rhuta-border mr-2"></div>
+                      <span class="text-rhuta-dark-gray font-montserrat">Una letra mayúscula</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <div id="number-check" class="w-4 h-4 rounded-full border-2 border-rhuta-border mr-2"></div>
+                      <span class="text-rhuta-dark-gray font-montserrat">Un número</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="confirm-password" class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">
+                    Confirmar Nueva Contraseña
+                  </label>
+                  <div class="relative">
+                    <input
+                      type="password"
+                      id="confirm-password"
+                      placeholder="Repite tu nueva contraseña"
+                      class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent font-montserrat pr-12"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                      onclick="togglePassword('confirm-password')"
+                    >
+                      <svg class="h-5 w-5 text-rhuta-dark-gray" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div id="match-check" class="mt-2 flex items-center text-sm hidden">
+                    <div class="w-4 h-4 rounded-full border-2 border-rhuta-border mr-2"></div>
+                    <span class="text-rhuta-dark-gray font-montserrat">Las contraseñas coinciden</span>
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-rhuta-green hover:bg-[#00A77F] text-white py-3 rounded-lg font-semibold font-montserrat transition-colors"
+                >
+                  Cambiar Contraseña
+                </button>
+              </form>
+
+              <!-- Mensaje de éxito (oculto inicialmente) -->
+              <div id="success-message" class="hidden text-center space-y-6">
+                <div class="w-16 h-16 bg-rhuta-green bg-opacity-10 rounded-full flex items-center justify-center mx-auto">
+                  <svg class="w-8 h-8 text-rhuta-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray mb-2">¡Contraseña Actualizada!</h2>
+                  <p class="text-rhuta-dark-gray font-montserrat opacity-80">
+                    Tu contraseña ha sido cambiada exitosamente. 
+                    Ya puedes iniciar sesión con tu nueva contraseña.
+                  </p>
+                </div>
+                <a
+                  href="login.html"
+                  class="w-full bg-rhuta-green hover:bg-[#00A77F] text-white py-3 rounded-lg font-semibold font-montserrat transition-colors inline-block text-center"
+                >
+                  Ir a Iniciar Sesión
+                </a>
+              </div>
+
+              <!-- Enlaces adicionales -->
+              <div class="mt-8 text-center space-y-2">
+                <p class="text-rhuta-dark-gray font-montserrat">
+                  ¿Recordaste tu contraseña? 
+                  <a href="login.html" class="text-rhuta-blue hover:text-rhuta-green transition-colors font-semibold">
+                    Inicia sesión aquí
+                  </a>
+                </p>
+                <p class="text-rhuta-dark-gray font-montserrat">
+                  ¿No tienes una cuenta? 
+                  <a href="registro.html" class="text-rhuta-blue hover:text-rhuta-green transition-colors font-semibold">
+                    Regístrate aquí
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function togglePassword(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+      }
+
+      function resendEmail() {
+        // Simular reenvío de email
+        alert('Enlace de recuperación reenviado a tu correo electrónico.');
+      }
+
+      function backToStep1() {
+        document.getElementById('step1-form').classList.remove('hidden');
+        document.getElementById('confirmation-message').classList.add('hidden');
+        document.getElementById('email').value = '';
+      }
+
+      // Validación de contraseña en tiempo real
+      document.getElementById('new-password').addEventListener('input', function() {
+        const password = this.value;
+        const lengthCheck = document.getElementById('length-check');
+        const uppercaseCheck = document.getElementById('uppercase-check');
+        const numberCheck = document.getElementById('number-check');
+
+        // Verificar longitud
+        if (password.length >= 8) {
+          lengthCheck.className = 'w-4 h-4 rounded-full bg-rhuta-green mr-2';
+        } else {
+          lengthCheck.className = 'w-4 h-4 rounded-full border-2 border-rhuta-border mr-2';
+        }
+
+        // Verificar mayúscula
+        if (/[A-Z]/.test(password)) {
+          uppercaseCheck.className = 'w-4 h-4 rounded-full bg-rhuta-green mr-2';
+        } else {
+          uppercaseCheck.className = 'w-4 h-4 rounded-full border-2 border-rhuta-border mr-2';
+        }
+
+        // Verificar número
+        if (/\d/.test(password)) {
+          numberCheck.className = 'w-4 h-4 rounded-full bg-rhuta-green mr-2';
+        } else {
+          numberCheck.className = 'w-4 h-4 rounded-full border-2 border-rhuta-border mr-2';
+        }
+      });
+
+      // Verificar coincidencia de contraseñas
+      document.getElementById('confirm-password').addEventListener('input', function() {
+        const password = document.getElementById('new-password').value;
+        const confirmPassword = this.value;
+        const matchCheck = document.getElementById('match-check');
+
+        if (confirmPassword && password === confirmPassword) {
+          matchCheck.classList.remove('hidden');
+          matchCheck.querySelector('div').className = 'w-4 h-4 rounded-full bg-rhuta-green mr-2';
+        } else if (confirmPassword) {
+          matchCheck.classList.remove('hidden');
+          matchCheck.querySelector('div').className = 'w-4 h-4 rounded-full border-2 border-rhuta-border mr-2';
+        } else {
+          matchCheck.classList.add('hidden');
+        }
+      });
+
+      // Manejar envío del formulario paso 1
+      document.getElementById('step1-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('step1-form').classList.add('hidden');
+        document.getElementById('confirmation-message').classList.remove('hidden');
+      });
+
+      // Manejar envío del formulario paso 2
+      document.getElementById('step2-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('step2-form').classList.add('hidden');
+        document.getElementById('success-message').classList.remove('hidden');
+      });
+
+      // Simular llegada desde enlace de email
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('token')) {
+        document.getElementById('step1-form').classList.add('hidden');
+        document.getElementById('step2-form').classList.remove('hidden');
+      }
+    </script>
+  </body>
+</html>

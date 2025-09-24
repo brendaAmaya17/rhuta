@@ -1,0 +1,294 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Construcción de Micro Rutas</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Gestor de Contenido -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="lista_cursos.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Lista de Cursos</span>
+            </a>
+            <a href="Construcción_microrutas.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Construcción Micro Rutas</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Construcción de Micro Rutas</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Crea y estructura micro rutas de aprendizaje personalizadas</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <!-- Panel izquierdo: Cursos disponibles -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Cursos Aprobados Disponibles</h2>
+                
+                <!-- Curso 1 -->
+                <div class="border border-rhuta-border rounded-lg p-4 mb-4 hover:shadow-md transition-shadow cursor-pointer">
+                  <div class="flex items-center gap-4">
+                    <div class="w-16 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Introducción a la Programación</h3>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Duración: 4 semanas | Dificultad: Principiante</p>
+                      <div class="flex items-center gap-2 mt-2">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-montserrat">Programación</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-montserrat">iVirtuo</span>
+                      </div>
+                    </div>
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Agregar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Curso 2 -->
+                <div class="border border-rhuta-border rounded-lg p-4 mb-4 hover:shadow-md transition-shadow cursor-pointer">
+                  <div class="flex items-center gap-4">
+                    <div class="w-16 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center">
+                      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Desarrollo Web Avanzado</h3>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Duración: 6 semanas | Dificultad: Intermedio</p>
+                      <div class="flex items-center gap-2 mt-2">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-montserrat">Desarrollo</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-montserrat">Coursera</span>
+                      </div>
+                    </div>
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Agregar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="border border-rhuta-border rounded-lg p-4 mb-4 hover:shadow-md transition-shadow cursor-pointer">
+                  <div class="flex items-center gap-4">
+                    <div class="w-16 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
+                      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Análisis de Datos con Python</h3>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Duración: 5 semanas | Dificultad: Intermedio</p>
+                      <div class="flex items-center gap-2 mt-2">
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-montserrat">Datos</span>
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-montserrat">Udemy</span>
+                      </div>
+                    </div>
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Agregar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Curso 4 -->
+                <div class="border border-rhuta-border rounded-lg p-4 mb-4 hover:shadow-md transition-shadow cursor-pointer">
+                  <div class="flex items-center gap-4">
+                    <div class="w-16 h-12 bg-gradient-to-r from-pink-500 to-rose-600 rounded-lg flex items-center justify-center">
+                      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Diseño de Interfaces de Usuario (UI)</h3>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Duración: 3 semanas | Dificultad: Principiante</p>
+                      <div class="flex items-center gap-2 mt-2">
+                        <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded-full text-xs font-montserrat">Diseño</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-montserrat">iVirtuo</span>
+                      </div>
+                    </div>
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Agregar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Curso 5 -->
+                <div class="border border-rhuta-border rounded-lg p-4 mb-4 hover:shadow-md transition-shadow cursor-pointer">
+                  <div class="flex items-center gap-4">
+                    <div class="w-16 h-12 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center">
+                      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway">Marketing Digital Estratégico</h3>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Duración: 4 semanas | Dificultad: Intermedio</p>
+                      <div class="flex items-center gap-2 mt-2">
+                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs font-montserrat">Marketing</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-montserrat">Pluralsight</span>
+                      </div>
+                    </div>
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel derecho: Constructor de micro rutas -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Constructor de Micro Rutas</h2>
+                
+                <!-- Formulario de creación -->
+                <div class="space-y-6">
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Nombre de la Micro-Ruta</label>
+                    <input type="text" placeholder="Ej. Desarrollo Full Stack" 
+                           class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                  </div>
+                  
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Vertical</label>
+                    <select class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                      <option value="">Seleccionar vertical</option>
+                      <option value="tecnologia">Tecnología</option>
+                      <option value="marketing">Marketing</option>
+                      <option value="diseno">Diseño</option>
+                      <option value="negocios">Negocios</option>
+                      <option value="datos">Análisis de Datos</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Descripción</label>
+                    <textarea placeholder="Breve descripción de la micro-ruta" rows="3"
+                              class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent"></textarea>
+                  </div>
+                  
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Nivel de Dificultad</label>
+                    <select class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                      <option value="">Seleccionar nivel</option>
+                      <option value="principiante">Principiante</option>
+                      <option value="intermedio">Intermedio</option>
+                      <option value="avanzado">Avanzado</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Duración Estimada (semanas)</label>
+                    <input type="number" placeholder="Ej. 8" min="1" max="52"
+                           class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                  </div>
+                </div>
+
+                <!-- Cursos seleccionados -->
+                <div class="mt-8">
+                  <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway mb-4">Cursos Seleccionados</h3>
+                  <div class="space-y-3">
+                    <!-- Curso seleccionado 1 -->
+                    <div class="flex items-center justify-between p-3 bg-rhuta-light-gray rounded-lg">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-rhuta-green rounded-full flex items-center justify-center">
+                          <span class="text-white text-sm font-bold">1</span>
+                        </div>
+                        <div>
+                          <p class="text-rhuta-dark-gray font-montserrat font-semibold">Introducción a la Programación</p>
+                          <p class="text-rhuta-blue text-sm font-montserrat">4 semanas | Principiante</p>
+                        </div>
+                      </div>
+                      <button class="text-red-500 hover:text-red-700 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <!-- Curso seleccionado 2 -->
+                    <div class="flex items-center justify-between p-3 bg-rhuta-light-gray rounded-lg">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-rhuta-green rounded-full flex items-center justify-center">
+                          <span class="text-white text-sm font-bold">2</span>
+                        </div>
+                        <div>
+                          <p class="text-rhuta-dark-gray font-montserrat font-semibold">Desarrollo Web Avanzado</p>
+                          <p class="text-rhuta-blue text-sm font-montserrat">6 semanas | Intermedio</p>
+                        </div>
+                      </div>
+                      <button class="text-red-500 hover:text-red-700 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="flex gap-4 mt-8">
+                  <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors flex-1">
+                    Crear Micro Ruta
+                  </button>
+                  <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                    Guardar Borrador
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

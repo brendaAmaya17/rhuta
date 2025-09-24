@@ -1,0 +1,261 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Dashboard Super Admin</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Super Admin -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="dashboard_SAdmin.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Dashboard</span>
+            </a>
+            <a href="gestion_usuarios.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión Usuarios</span>
+            </a>
+            <a href="gestion_planes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión Planes</span>
+            </a>
+            <a href="gestion_cuentas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión Cuentas</span>
+            </a>
+            <a href="seguimiento_pagos.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Seguimiento Pagos</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Dashboard Super Admin</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Panel de control y administración de la plataforma RHUTA</p>
+            </div>
+            <!-- Métricas principales -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <!-- Total Usuarios -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Total Usuarios</p>
+                    <p class="text-rhuta-blue text-3xl font-bold font-raleway">2,847</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-blue bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-rhuta-green text-sm font-montserrat mt-2">+12% este mes</p>
+              </div>
+
+              <!-- Empresas Activas -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Empresas Activas</p>
+                    <p class="text-rhuta-green text-3xl font-bold font-raleway">156</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-green bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-green" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-rhuta-green text-sm font-montserrat mt-2">+8% este mes</p>
+              </div>
+
+              <!-- Vacantes Activas -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Vacantes Activas</p>
+                    <p class="text-blue-500 text-3xl font-bold font-raleway">89</p>
+                  </div>
+                  <div class="w-12 h-12 bg-blue-500 bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-rhuta-green text-sm font-montserrat mt-2">+15% este mes</p>
+              </div>
+
+              <!-- Ingresos Mensuales -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Ingresos Mensuales</p>
+                    <p class="text-purple-500 text-3xl font-bold font-raleway">$45.2M</p>
+                  </div>
+                  <div class="w-12 h-12 bg-purple-500 bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-rhuta-green text-sm font-montserrat mt-2">+22% este mes</p>
+              </div>
+            </div>
+
+            <!-- Acciones rápidas -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 mb-8">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Acciones Rápidas</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <button class="bg-rhuta-green hover:bg-[#00A77F] text-white p-4 rounded-lg font-semibold font-montserrat transition-colors flex items-center gap-3">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                  </svg>
+                  Gestionar Usuarios
+                </button>
+                <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white p-4 rounded-lg font-semibold font-montserrat transition-colors flex items-center gap-3">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path>
+                  </svg>
+                  Gestionar Planes
+                </button>
+                <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray p-4 rounded-lg font-semibold font-montserrat transition-colors flex items-center gap-3">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                  </svg>
+                  Ver Reportes
+                </button>
+                <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray p-4 rounded-lg font-semibold font-montserrat transition-colors flex items-center gap-3">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
+                  </svg>
+                  Configuraciones
+                </button>
+              </div>
+            </div>
+
+            <!-- Estadísticas de la plataforma -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+              <!-- Actividad Reciente -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Actividad Reciente</h2>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3 p-3 bg-rhuta-light-gray rounded-lg">
+                    <div class="w-8 h-8 bg-rhuta-green rounded-full flex items-center justify-center">
+                      <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat">Nuevo usuario registrado</p>
+                      <p class="text-rhuta-blue text-xs font-montserrat">Juan Pérez - Hace 5 minutos</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 p-3 bg-rhuta-light-gray rounded-lg">
+                    <div class="w-8 h-8 bg-rhuta-blue rounded-full flex items-center justify-center">
+                      <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat">Nueva empresa registrada</p>
+                      <p class="text-rhuta-blue text-xs font-montserrat">TechCorp Solutions - Hace 15 minutos</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 p-3 bg-rhuta-light-gray rounded-lg">
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                      <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat">Nueva vacante publicada</p>
+                      <p class="text-rhuta-blue text-xs font-montserrat">Desarrollador Full Stack - Hace 1 hora</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Estado del Sistema -->
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Estado del Sistema</h2>
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between p-3 bg-rhuta-light-gray rounded-lg">
+                    <div class="flex items-center gap-3">
+                      <div class="w-3 h-3 bg-rhuta-green rounded-full"></div>
+                      <span class="text-rhuta-dark-gray font-montserrat">Servidor Principal</span>
+                    </div>
+                    <span class="text-rhuta-green text-sm font-montserrat font-semibold">Operativo</span>
+                  </div>
+                  <div class="flex items-center justify-between p-3 bg-rhuta-light-gray rounded-lg">
+                    <div class="flex items-center gap-3">
+                      <div class="w-3 h-3 bg-rhuta-green rounded-full"></div>
+                      <span class="text-rhuta-dark-gray font-montserrat">Base de Datos</span>
+                    </div>
+                    <span class="text-rhuta-green text-sm font-montserrat font-semibold">Operativo</span>
+                  </div>
+                  <div class="flex items-center justify-between p-3 bg-rhuta-light-gray rounded-lg">
+                    <div class="flex items-center gap-3">
+                      <div class="w-3 h-3 bg-rhuta-green rounded-full"></div>
+                      <span class="text-rhuta-dark-gray font-montserrat">API Gateway</span>
+                    </div>
+                    <span class="text-rhuta-green text-sm font-montserrat font-semibold">Operativo</span>
+                  </div>
+                  <div class="flex items-center justify-between p-3 bg-rhuta-light-gray rounded-lg">
+                    <div class="flex items-center gap-3">
+                      <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <span class="text-rhuta-dark-gray font-montserrat">Servicio de Emails</span>
+                    </div>
+                    <span class="text-yellow-500 text-sm font-montserrat font-semibold">Mantenimiento</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

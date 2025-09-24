@@ -1,0 +1,380 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Gestión de Planes</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Super Admin -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="dashboard_SAdmin.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Dashboard</span>
+            </a>
+            <a href="gestion_usuarios.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión Usuarios</span>
+            </a>
+            <a href="gestion_planes.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Gestión Planes</span>
+            </a>
+            <a href="gestion_cuentas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión Cuentas</span>
+            </a>
+            <a href="seguimiento_pagos.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Seguimiento Pagos</span>
+            </a>
+            <a href="configuracion_microrutas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Configuración Micro Rutas</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Gestión de Planes</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Administra los planes de suscripción y precios de la plataforma</p>
+            </div>
+            
+            <!-- Estadísticas de planes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Total Planes</p>
+                    <p class="text-rhuta-green text-3xl font-bold font-raleway">4</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-green bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-green" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Planes Activos</p>
+                    <p class="text-rhuta-blue text-3xl font-bold font-raleway">3</p>
+                  </div>
+                  <div class="w-12 h-12 bg-rhuta-blue bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-rhuta-blue" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Suscriptores Activos</p>
+                    <p class="text-purple-500 text-3xl font-bold font-raleway">1,247</p>
+                  </div>
+                  <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-rhuta-dark-gray text-sm font-montserrat mb-1">Ingresos Mensuales</p>
+                    <p class="text-green-500 text-3xl font-bold font-raleway">$45,200</p>
+                  </div>
+                  <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Acciones rápidas -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 mb-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-4">Acciones Rápidas</h2>
+              <div class="flex flex-wrap gap-4">
+                <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                  Crear Nuevo Plan
+                </button>
+                <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                  Configurar Precios
+                </button>
+                <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                  Exportar Reportes
+                </button>
+                <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-6 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                  Configurar Descuentos
+                </button>
+              </div>
+            </div>
+            
+            <!-- Lista de planes -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6">
+              <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Planes de Suscripción</h2>
+              
+              <!-- Plan Básico -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway">Plan Básico</h3>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Activo</span>
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-montserrat">Más Popular</span>
+                    </div>
+                    <p class="text-rhuta-dark-gray font-montserrat mb-4">
+                      Plan ideal para empresas pequeñas que buscan acceso básico a la plataforma.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Precio Mensual:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$99.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Precio Anual:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$990.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Suscriptores:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">456 empresas</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Ingresos:</p>
+                        <p class="text-rhuta-green text-sm font-montserrat">$45,144/mes</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Características incluidas:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Hasta 5 vacantes activas, 100 candidatos por mes, acceso a micro rutas básicas, soporte por email, reportes básicos</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Editar Plan
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Configurar Precios
+                    </button>
+                    <button class="border border-red-300 text-red-600 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Desactivar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Plan Premium -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway">Plan Premium</h3>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Activo</span>
+                      <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-montserrat">Recomendado</span>
+                    </div>
+                    <p class="text-rhuta-dark-gray font-montserrat mb-4">
+                      Plan completo para empresas medianas que necesitan funcionalidades avanzadas.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Precio Mensual:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$199.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Precio Anual:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$1,990.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Suscriptores:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">234 empresas</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Ingresos:</p>
+                        <p class="text-rhuta-green text-sm font-montserrat">$46,566/mes</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Características incluidas:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Vacantes ilimitadas, 500 candidatos por mes, acceso completo a micro rutas, soporte prioritario, reportes avanzados, integraciones API</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Editar Plan
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Configurar Precios
+                    </button>
+                    <button class="border border-red-300 text-red-600 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Desactivar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Plan Enterprise -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway">Plan Enterprise</h3>
+                      <span class="bg-rhuta-green bg-opacity-10 text-rhuta-green px-3 py-1 rounded-full text-sm font-montserrat">Activo</span>
+                      <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-montserrat">Personalizado</span>
+                    </div>
+                    <p class="text-rhuta-dark-gray font-montserrat mb-4">
+                      Plan personalizado para grandes empresas con necesidades específicas y soporte dedicado.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Precio Mensual:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$399.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Precio Anual:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$3,990.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Suscriptores:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">89 empresas</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Ingresos:</p>
+                        <p class="text-rhuta-green text-sm font-montserrat">$35,511/mes</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Características incluidas:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">Todo ilimitado, candidatos ilimitados, micro rutas personalizadas, soporte 24/7, reportes personalizados, integraciones avanzadas, gerente de cuenta dedicado</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Editar Plan
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Configurar Precios
+                    </button>
+                    <button class="border border-red-300 text-red-600 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Desactivar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Plan Gratuito -->
+              <div class="border border-rhuta-border rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-3">
+                      <h3 class="text-rhuta-dark-gray text-xl font-bold font-raleway">Plan Gratuito</h3>
+                      <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-montserrat">Inactivo</span>
+                      <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-montserrat">Prueba</span>
+                    </div>
+                    <p class="text-rhuta-dark-gray font-montserrat mb-4">
+                      Plan de prueba para que las empresas conozcan la plataforma antes de suscribirse.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Precio Mensual:</p>
+                        <p class="text-rhuta-green text-lg font-bold font-montserrat">$0.00</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Duración:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">14 días</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Usuarios:</p>
+                        <p class="text-rhuta-blue text-sm font-montserrat">1,234 empresas</p>
+                      </div>
+                      <div>
+                        <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold">Conversión:</p>
+                        <p class="text-rhuta-green text-sm font-montserrat">23%</p>
+                      </div>
+                    </div>
+                    <div class="bg-rhuta-light-gray rounded-lg p-4">
+                      <p class="text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Características incluidas:</p>
+                      <p class="text-rhuta-blue text-sm font-montserrat">1 vacante activa, 10 candidatos por mes, acceso limitado a micro rutas, soporte por email básico</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 ml-4">
+                    <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Activar
+                    </button>
+                    <button class="bg-rhuta-blue hover:bg-[#001E3D] text-white px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Ver Detalles
+                    </button>
+                    <button class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Configurar Límites
+                    </button>
+                    <button class="border border-red-300 text-red-600 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold font-montserrat transition-colors">
+                      Eliminar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

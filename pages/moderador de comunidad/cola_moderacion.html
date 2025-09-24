@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Cola de Moderación</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Moderador de Comunidad -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="cola_moderacion.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Cola de Moderación</span>
+            </a>
+            <a href="gestion_tickets.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión de Tickets</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Cola de Moderación</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Modera contenido y mantén la calidad de la comunidad RHUTA</p>
+            </div>
+            <div class="flex gap-3 p-3 flex-wrap pr-4">
+              <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e6eef4] pl-4 pr-2">
+                <p class="text-[#0c151d] text-sm font-medium leading-normal">Estado</p>
+                <div class="text-[#0c151d]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                  </svg>
+                </div>
+              </button>
+              <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e6eef4] pl-4 pr-2">
+                <p class="text-[#0c151d] text-sm font-medium leading-normal">Tipo</p>
+                <div class="text-[#0c151d]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-lg border border-[#cdddea] bg-slate-50">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-slate-50">
+                      <th class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-120 px-4 py-3 text-left text-[#0c151d] w-[400px] text-sm font-medium leading-normal">
+                        ID de Usuario
+                      </th>
+                      <th class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-240 px-4 py-3 text-left text-[#0c151d] w-[400px] text-sm font-medium leading-normal">
+                        ID de Referencia
+                      </th>
+                      <th class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-360 px-4 py-3 text-left text-[#0c151d] w-[400px] text-sm font-medium leading-normal">
+                        Motivo del Reporte
+                      </th>
+                      <th class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-480 px-4 py-3 text-left text-[#0c151d] w-60 text-[#4579a1] text-sm font-medium leading-normal">
+                        Acciones
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#cdddea]">
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">
+                        Usuario123
+                      </td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">Ref456</td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">
+                        Contenido inapropiado
+                      </td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-480 h-[72px] px-4 py-2 w-60 text-[#4579a1] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Aprobar | Rechazar | Ver Contexto
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#cdddea]">
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">
+                        Usuario456
+                      </td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">Ref789</td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">Spam</td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-480 h-[72px] px-4 py-2 w-60 text-[#4579a1] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Aprobar | Rechazar | Ver Contexto
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#cdddea]">
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">
+                        Usuario789
+                      </td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">Ref101</td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">Acoso</td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-480 h-[72px] px-4 py-2 w-60 text-[#4579a1] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Aprobar | Rechazar | Ver Contexto
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#cdddea]">
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">
+                        Usuario101
+                      </td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">Ref121</td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">
+                        Violencia
+                      </td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-480 h-[72px] px-4 py-2 w-60 text-[#4579a1] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Aprobar | Rechazar | Ver Contexto
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#cdddea]">
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">
+                        Usuario121
+                      </td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">Ref141</td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4579a1] text-sm font-normal leading-normal">
+                        Desinformación
+                      </td>
+                      <td class="table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-480 h-[72px] px-4 py-2 w-60 text-[#4579a1] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Aprobar | Rechazar | Ver Contexto
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:120px){.table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-120{display: none;}}
+                @container(max-width:240px){.table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-240{display: none;}}
+                @container(max-width:360px){.table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-360{display: none;}}
+                @container(max-width:480px){.table-e8deb320-e65f-4ef4-89fc-df8caa3eab14-column-480{display: none;}}
+              </style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

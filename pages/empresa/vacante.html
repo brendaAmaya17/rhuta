@@ -1,0 +1,281 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Crear Vacante</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Empresa -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="dashboard_empresa.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Dashboard</span>
+            </a>
+            <a href="gestion_vacantes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión de Vacantes</span>
+            </a>
+            <a href="gestion_empleos.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión de Empleos</span>
+            </a>
+            <a href="vacante.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Crear Vacante</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-4xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Crear Nueva Vacante</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Publica una nueva oferta de trabajo en la plataforma RHUTA</p>
+            </div>
+            
+            <!-- Formulario de creación de vacante -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-8">
+              <form class="space-y-8">
+                <!-- Información básica -->
+                <div>
+                  <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Información Básica</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label for="titulo" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Título del Puesto</label>
+                      <input type="text" id="titulo" placeholder="Ej: Desarrollador Frontend Senior"
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    </div>
+                    <div>
+                      <label for="categoria" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Categoría</label>
+                      <select id="categoria" class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                        <option value="">Selecciona una categoría</option>
+                        <option value="tecnologia">Tecnología</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="diseno">Diseño</option>
+                        <option value="ventas">Ventas</option>
+                        <option value="recursos_humanos">Recursos Humanos</option>
+                        <option value="finanzas">Finanzas</option>
+                        <option value="operaciones">Operaciones</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="tipo_contrato" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Tipo de Contrato</label>
+                      <select id="tipo_contrato" class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                        <option value="">Selecciona el tipo de contrato</option>
+                        <option value="tiempo_completo">Tiempo Completo</option>
+                        <option value="medio_tiempo">Medio Tiempo</option>
+                        <option value="por_proyecto">Por Proyecto</option>
+                        <option value="freelance">Freelance</option>
+                        <option value="practicas">Prácticas</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="modalidad" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Modalidad</label>
+                      <select id="modalidad" class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                        <option value="">Selecciona la modalidad</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="remoto">Remoto</option>
+                        <option value="hibrido">Híbrido</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Ubicación y salario -->
+                <div>
+                  <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Ubicación y Compensación</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <label for="ciudad" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Ciudad</label>
+                      <input type="text" id="ciudad" placeholder="Ej: Bogotá, Medellín"
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    </div>
+                    <div>
+                      <label for="salario_min" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Salario Mínimo</label>
+                      <input type="number" id="salario_min" placeholder="Ej: 3000000"
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    </div>
+                    <div>
+                      <label for="salario_max" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Salario Máximo</label>
+                      <input type="number" id="salario_max" placeholder="Ej: 5000000"
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Descripción y responsabilidades -->
+                <div>
+                  <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Descripción del Puesto</h2>
+                  <div class="space-y-6">
+                    <div>
+                      <label for="descripcion" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Descripción General</label>
+                      <textarea id="descripcion" rows="4" placeholder="Describe brevemente el puesto y la empresa..."
+                                class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent"></textarea>
+                    </div>
+                    <div>
+                      <label for="responsabilidades" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Responsabilidades</label>
+                      <textarea id="responsabilidades" rows="4" placeholder="Lista las principales responsabilidades del puesto..."
+                                class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent"></textarea>
+                    </div>
+                    <div>
+                      <label for="requisitos" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Requisitos</label>
+                      <textarea id="requisitos" rows="4" placeholder="Especifica los requisitos técnicos y de experiencia..."
+                                class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Experiencia y educación -->
+                <div>
+                  <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Experiencia y Educación</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label for="experiencia_min" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Experiencia Mínima (años)</label>
+                      <select id="experiencia_min" class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                        <option value="">Selecciona la experiencia mínima</option>
+                        <option value="0">Sin experiencia</option>
+                        <option value="1">1 año</option>
+                        <option value="2">2 años</option>
+                        <option value="3">3 años</option>
+                        <option value="5">5 años</option>
+                        <option value="7">7 años</option>
+                        <option value="10">10+ años</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="nivel_educacion" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Nivel de Educación</label>
+                      <select id="nivel_educacion" class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                        <option value="">Selecciona el nivel de educación</option>
+                        <option value="bachillerato">Bachillerato</option>
+                        <option value="tecnico">Técnico</option>
+                        <option value="tecnologo">Tecnólogo</option>
+                        <option value="pregrado">Pregrado</option>
+                        <option value="posgrado">Posgrado</option>
+                        <option value="maestria">Maestría</option>
+                        <option value="doctorado">Doctorado</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Habilidades y competencias -->
+                <div>
+                  <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Habilidades y Competencias</h2>
+                  <div class="space-y-6">
+                    <div>
+                      <label for="habilidades_tecnicas" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Habilidades Técnicas</label>
+                      <input type="text" id="habilidades_tecnicas" placeholder="Ej: React, Node.js, PostgreSQL, Git"
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                      <p class="text-rhuta-blue text-sm font-montserrat mt-1">Separa las habilidades con comas</p>
+                    </div>
+                    <div>
+                      <label for="habilidades_blandas" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Habilidades Blandas</label>
+                      <input type="text" id="habilidades_blandas" placeholder="Ej: Trabajo en equipo, Comunicación, Liderazgo"
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Información adicional -->
+                <div>
+                  <h2 class="text-rhuta-dark-gray text-2xl font-bold font-raleway mb-6">Información Adicional</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label for="fecha_cierre" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Fecha de Cierre</label>
+                      <input type="date" id="fecha_cierre"
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    </div>
+                    <div>
+                      <label for="numero_vacantes" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Número de Vacantes</label>
+                      <input type="number" id="numero_vacantes" placeholder="Ej: 2" min="1"
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    </div>
+                  </div>
+                  <div class="mt-6">
+                    <label for="beneficios" class="block text-rhuta-dark-gray text-sm font-montserrat mb-2">Beneficios Adicionales</label>
+                    <textarea id="beneficios" rows="3" placeholder="Ej: Seguro médico, bonos de productividad, horario flexible..."
+                              class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent"></textarea>
+                  </div>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="flex justify-end gap-4 pt-6 border-t border-rhuta-border">
+                  <button type="button" class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-8 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                    Guardar como Borrador
+                  </button>
+                  <button type="submit" class="bg-rhuta-green hover:bg-[#00A77F] text-white px-8 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                    Publicar Vacante
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Footer -->
+        <footer class="bg-rhuta-blue text-white py-2">
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <div class="size-5">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                      fill="#00C694"
+                    />
+                  </svg>
+                </div>
+                <p class="text-white text-base font-bold font-raleway">RHUTA</p>
+              </div>
+            </div>
+            <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+              <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

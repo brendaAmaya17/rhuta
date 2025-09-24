@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600;700"
+    />
+
+    <title>RHUTA - Gestión de Vacantes</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#F3F4F6',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-rhuta-light-gray">
+    <div class="relative flex size-full min-h-screen flex-col" style='font-family: Montserrat, sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+              <div class="flex items-center gap-4">
+                <div class="size-8">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="#00C694" /></svg>
+                </div>
+                <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+              </div>
+              <nav class="flex items-center gap-6">
+                <a href="dashboard_empresa.html" class="text-white hover:text-rhuta-green transition-colors font-semibold">Dashboard</a>
+                <a href="gestion_vacantes.html" class="text-rhuta-green border-b-2 border-rhuta-green font-semibold">Gestión Vacantes</a>
+                <a href="gestion_empleos.html" class="text-white hover:text-rhuta-green transition-colors font-semibold">Gestión Empleos</a>
+                <a href="dashboard_empresa.html" class="text-white hover:text-rhuta-green transition-colors font-semibold">Mi Perfil</a>
+                <!-- Este enlace sube un nivel para llegar a la página de login -->
+                <a href="../login.html" class="text-white hover:text-red-400 transition-colors font-semibold">Cerrar Sesión</a>
+              </nav>
+            </header>
+
+            <main class="w-full max-w-7xl mx-auto py-8 px-4 md:px-10">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                    <div>
+                        <h1 class="text-rhuta-dark-gray text-3xl md:text-4xl font-bold font-raleway">Gestión de Vacantes</h1>
+                        <p class="text-gray-500 mt-1">Crea y administra tus ofertas de trabajo</p>
+                    </div>
+                    <!-- Convertimos el botón en un enlace a la página para crear vacantes -->
+                    <a href="vacante.html" class="bg-rhuta-green hover:bg-[#00A77F] text-white px-5 py-3 rounded-lg font-semibold font-montserrat transition-colors flex items-center gap-2 mt-4 md:mt-0">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                        Crear Nueva Vacante
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-rhuta-border p-6 mb-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <input type="text" placeholder="Buscar por título, descripción..." class="w-full form-input border-rhuta-border rounded-lg focus:ring-rhuta-blue focus:border-rhuta-blue text-sm">
+                        <select class="w-full form-select border-rhuta-border rounded-lg focus:ring-rhuta-blue focus:border-rhuta-blue text-sm">
+                            <option>Todos los estados</option>
+                            <option>Activa</option>
+                            <option>Pausada</option>
+                            <option>Cerrada</option>
+                        </select>
+                        <select class="w-full form-select border-rhuta-border rounded-lg focus:ring-rhuta-blue focus:border-rhuta-blue text-sm">
+                            <option>Todas las fechas</option>
+                            <option>Última semana</option>
+                            <option>Último mes</option>
+                        </select>
+                        <button class="w-full bg-rhuta-blue hover:bg-[#001E3D] text-white py-2.5 rounded-lg font-semibold transition-colors">Filtrar</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Tarjeta 1 -->
+                    <div class="bg-white rounded-xl shadow-md border border-rhuta-border flex flex-col justify-between p-6 hover:shadow-lg transition-shadow">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-rhuta-dark-gray font-raleway">Desarrollador Full Stack</h3>
+                                <span class="text-xs font-bold text-green-800 bg-green-100 px-3 py-1 rounded-full">Activa</span>
+                            </div>
+                            <p class="text-sm text-gray-500 flex items-center gap-1.5 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-rhuta-green" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                                Bogotá, Colombia • Remoto
+                            </p>
+                            <p class="text-sm text-gray-500 mb-4">Tiempo Completo</p>
+                            <div class="flex items-center text-sm text-gray-600 gap-4">
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="h-4 w-4 text-rhuta-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.004 3.004 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                    <b class="text-rhuta-dark-gray">15</b> Candidatos
+                                </span>
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="h-4 w-4 text-rhuta-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                    21/08/2025
+                                </span>
+                            </div>
+                        </div>
+                        <div class="border-t border-rhuta-border mt-6 pt-4 flex gap-3">
+                           <a href="vacante.html" class="flex-1 bg-rhuta-blue text-white text-sm font-semibold py-2 rounded-lg text-center hover:bg-opacity-90">Ver Candidatos</a>
+                           <button class="p-2 text-rhuta-blue bg-rhuta-light-gray rounded-lg hover:bg-rhuta-border transition-colors"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg></button>
+                           <button class="p-2 text-red-500 bg-rhuta-light-gray rounded-lg hover:bg-rhuta-border transition-colors"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-2 0v6a1 1 0 102 0V7z" clip-rule="evenodd" /></svg></button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="bg-white rounded-xl shadow-md border border-rhuta-border flex flex-col justify-between p-6 hover:shadow-lg transition-shadow">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-rhuta-dark-gray font-raleway">Analista de Datos Jr.</h3>
+                                <span class="text-xs font-bold text-yellow-800 bg-yellow-100 px-3 py-1 rounded-full">Pausada</span>
+                            </div>
+                            <p class="text-sm text-gray-500 flex items-center gap-1.5 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-rhuta-green" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                                Santiago, Chile • Híbrido
+                            </p>
+                            <p class="text-sm text-gray-500 mb-4">Tiempo Completo</p>
+                            <div class="flex items-center text-sm text-gray-600 gap-4">
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="h-4 w-4 text-rhuta-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.004 3.004 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                    <b class="text-rhuta-dark-gray">2</b> Candidatos
+                                </span>
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="h-4 w-4 text-rhuta-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                    01/09/2025
+                                </span>
+                            </div>
+                        </div>
+                        <div class="border-t border-rhuta-border mt-6 pt-4 flex gap-3">
+                           <a href="vacante.html" class="flex-1 bg-rhuta-blue text-white text-sm font-semibold py-2 rounded-lg text-center hover:bg-opacity-90">Ver Candidatos</a>
+                           <button class="p-2 text-rhuta-blue bg-rhuta-light-gray rounded-lg hover:bg-rhuta-border transition-colors"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg></button>
+                           <button class="p-2 text-red-500 bg-rhuta-light-gray rounded-lg hover:bg-rhuta-border transition-colors"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-2 0v6a1 1 0 102 0V7z" clip-rule="evenodd" /></svg></button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="bg-white rounded-xl shadow-md border border-rhuta-border flex flex-col justify-between p-6 hover:shadow-lg transition-shadow">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-rhuta-dark-gray font-raleway">Diseñador UX/UI Senior</h3>
+                                <span class="text-xs font-bold text-gray-800 bg-gray-200 px-3 py-1 rounded-full">Cerrada</span>
+                            </div>
+                            <p class="text-sm text-gray-500 flex items-center gap-1.5 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-rhuta-green" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                                Medellín, Colombia
+                            </p>
+                            <p class="text-sm text-gray-500 mb-4">Medio Tiempo</p>
+                            <div class="flex items-center text-sm text-gray-600 gap-4">
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="h-4 w-4 text-rhuta-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.004 3.004 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                    <b class="text-rhuta-dark-gray">42</b> Candidatos
+                                </span>
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="h-4 w-4 text-rhuta-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                    15/07/2025
+                                </span>
+                            </div>
+                        </div>
+                        <div class="border-t border-rhuta-border mt-6 pt-4 flex gap-3">
+                           <a href="vacante.html" class="flex-1 bg-rhuta-blue text-white text-sm font-semibold py-2 rounded-lg text-center opacity-50 cursor-not-allowed">Ver Candidatos</a>
+                           <button class="p-2 text-rhuta-blue bg-rhuta-light-gray rounded-lg hover:bg-rhuta-border transition-colors"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg></button>
+                           <button class="p-2 text-red-500 bg-rhuta-light-gray rounded-lg hover:bg-rhuta-border transition-colors"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-2 0v6a1 1 0 102 0V7z" clip-rule="evenodd" /></svg></button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div class="bg-white rounded-xl shadow-md border border-rhuta-border flex flex-col justify-between p-6 hover:shadow-lg transition-shadow">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-rhuta-dark-gray font-raleway">Especialista en Marketing Digital</h3>
+                                <span class="text-xs font-bold text-yellow-800 bg-yellow-100 px-3 py-1 rounded-full">Pausada</span>
+                            </div>
+                            <p class="text-sm text-gray-500 flex items-center gap-1.5 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-rhuta-green" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                                Ciudad de México, México
+                            </p>
+                            <p class="text-sm text-gray-500 mb-4">Tiempo Completo</p>
+                            <div class="flex items-center text-sm text-gray-600 gap-4">
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="h-4 w-4 text-rhuta-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.004 3.004 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                    <b class="text-rhuta-dark-gray">8</b> Candidatos
+                                </span>
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="h-4 w-4 text-rhuta-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                    10/08/2025
+                                </span>
+                            </div>
+                        </div>
+                        <div class="border-t border-rhuta-border mt-6 pt-4 flex gap-3">
+                           <a href="vacante.html" class="flex-1 bg-rhuta-blue text-white text-sm font-semibold py-2 rounded-lg text-center hover:bg-opacity-90">Ver Candidatos</a>
+                           <button class="p-2 text-rhuta-blue bg-rhuta-light-gray rounded-lg hover:bg-rhuta-border transition-colors"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg></button>
+                           <button class="p-2 text-red-500 bg-rhuta-light-gray rounded-lg hover:bg-rhuta-border transition-colors"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-2 0v6a1 1 0 102 0V7z" clip-rule="evenodd" /></svg></button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer class="bg-rhuta-blue text-white py-2 mt-auto">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+                    <div class="flex items-center gap-2">
+                        <div class="size-5">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                                    fill="#00C694"
+                                />
+                            </svg>
+                        </div>
+                        <p class="text-white text-base font-bold font-raleway">RHUTA</p>
+                    </div>
+                </div>
+                <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+                    <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

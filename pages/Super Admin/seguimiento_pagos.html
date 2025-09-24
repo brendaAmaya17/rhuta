@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Seguimiento de Pagos</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF', // <-- Color actualizado
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Header con navegación de Super Admin (Actualizado) -->
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+              <div class="flex items-center gap-4">
+                <div class="size-8">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                      fill="#00C694"
+                    />
+                  </svg>
+                </div>
+                <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+              </div>
+              <nav class="flex items-center gap-6">
+                <a href="dashboard_SAdmin.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                  <span class="font-montserrat font-semibold">Dashboard</span>
+                </a>
+                <a href="gestion_usuarios.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                  <span class="font-montserrat font-semibold">Gestión Usuarios</span>
+                </a>
+                <a href="gestion_planes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                  <span class="font-montserrat font-semibold">Gestión Planes</span>
+                </a>
+                <a href="gestion_cuentas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                  <span class="font-montserrat font-semibold">Gestión Cuentas</span>
+                </a>
+                <a href="seguimiento_pagos.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+                  <span class="font-montserrat font-semibold">Seguimiento Pagos</span>
+                </a>
+                <a href="configuracion_microrutas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+                  <span class="font-montserrat font-semibold">Configuración Micro Rutas</span>
+                </a>
+                <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+                  <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+                </button>
+              </nav>
+            </header>
+
+            <!-- Contenido principal de la página de Seguimiento de Pagos -->
+            <main class="w-full max-w-7xl mx-auto py-8 px-4 md:px-10">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                    <div>
+                        <h1 class="text-rhuta-dark-gray text-3xl md:text-4xl font-bold font-raleway">Seguimiento de Pagos</h1>
+                        <p class="text-gray-500 mt-1">Administra y verifica el estado de los pagos de los clientes</p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-4 md:mt-0">
+                        <button class="bg-white hover:bg-rhuta-border text-rhuta-dark-gray px-5 py-3 rounded-lg font-semibold font-montserrat transition-colors flex items-center gap-2 border border-rhuta-border">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Exportar
+                        </button>
+                        <button class="bg-rhuta-green hover:bg-[#00A77F] text-white px-5 py-3 rounded-lg font-semibold font-montserrat transition-colors flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+                            Registrar Pago
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-rhuta-border p-6 md:p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <input type="text" placeholder="Buscar por empresa, plan, monto..." class="md:col-span-2 w-full form-input border-rhuta-border rounded-lg focus:ring-rhuta-green focus:border-rhuta-green text-sm">
+                        <select class="w-full form-select border-rhuta-border rounded-lg focus:ring-rhuta-green focus:border-rhuta-green text-sm">
+                            <option>Filtrar por estado</option>
+                            <option>Completado</option>
+                            <option>Pendiente</option>
+                            <option>Fallido</option>
+                        </select>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                          <thead>
+                            <tr class="bg-rhuta-light-gray">
+                              <th class="p-4 text-sm font-semibold text-rhuta-dark-gray rounded-l-lg cursor-pointer hover:bg-rhuta-border"><div class="flex items-center gap-1">Empresa <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></div></th>
+                              <th class="p-4 text-sm font-semibold text-rhuta-dark-gray">Plan</th>
+                              <th class="p-4 text-sm font-semibold text-rhuta-dark-gray cursor-pointer hover:bg-rhuta-border"><div class="flex items-center gap-1">Fecha de Pago <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></div></th>
+                              <th class="p-4 text-sm font-semibold text-rhuta-dark-gray cursor-pointer hover:bg-rhuta-border"><div class="flex items-center gap-1">Monto <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></div></th>
+                              <th class="p-4 text-sm font-semibold text-rhuta-dark-gray">Estado</th>
+                              <th class="p-4 text-sm font-semibold text-rhuta-dark-gray rounded-r-lg">Acciones</th>
+                            </tr>
+                          </thead>
+                          <tbody class="divide-y divide-rhuta-border">
+                            <tr class="hover:bg-gray-50 transition-colors cursor-pointer">
+                                <td class="p-4 font-semibold text-rhuta-dark-gray">Tech Solutions Inc.</td>
+                                <td class="p-4 text-gray-600">Plan Básico</td>
+                                <td class="p-4 text-gray-600">2024-01-15</td>
+                                <td class="p-4 text-gray-600">$100.00</td>
+                                <td class="p-4"><span class="text-xs font-bold text-green-800 bg-green-100 px-3 py-1 rounded-full">Completado</span></td>
+                                <td class="p-4"><a href="#" class="font-semibold text-rhuta-blue hover:underline">Ver Detalle</a></td>
+                            </tr>
+                             <tr class="hover:bg-gray-50 transition-colors cursor-pointer">
+                                <td class="p-4 font-semibold text-rhuta-dark-gray">Global Innovations</td>
+                                <td class="p-4 text-gray-600">Plan Premium</td>
+                                <td class="p-4 text-gray-600">2024-02-20</td>
+                                <td class="p-4 text-gray-600">$200.00</td>
+                                <td class="p-4"><span class="text-xs font-bold text-green-800 bg-green-100 px-3 py-1 rounded-full">Completado</span></td>
+                                <td class="p-4"><a href="#" class="font-semibold text-rhuta-blue hover:underline">Ver Detalle</a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors cursor-pointer">
+                                <td class="p-4 font-semibold text-rhuta-dark-gray">Dynamic Systems Co.</td>
+                                <td class="p-4 text-gray-600">Plan Estándar</td>
+                                <td class="p-4 text-gray-600">2024-03-25</td>
+                                <td class="p-4 text-gray-600">$50.00</td>
+                                <td class="p-4"><span class="text-xs font-bold text-yellow-800 bg-yellow-100 px-3 py-1 rounded-full">Pendiente</span></td>
+                                <td class="p-4"><a href="#" class="font-semibold text-rhuta-blue hover:underline">Ver Detalle</a></td>
+                            </tr>
+                             <tr class="hover:bg-gray-50 transition-colors cursor-pointer">
+                                <td class="p-4 font-semibold text-rhuta-dark-gray">Pinnacle Enterprises</td>
+                                <td class="p-4 text-gray-600">Plan Básico</td>
+                                <td class="p-4 text-gray-600">2024-04-30</td>
+                                <td class="p-4 text-gray-600">$150.00</td>
+                                <td class="p-4"><span class="text-xs font-bold text-red-800 bg-red-100 px-3 py-1 rounded-full">Fallido</span></td>
+                                <td class="p-4"><a href="#" class="font-semibold text-rhuta-blue hover:underline">Ver Detalle</a></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mt-6">
+                        <p class="text-sm text-gray-500">Mostrando 1 a 4 de 20 resultados</p>
+                        <div class="flex items-center gap-2">
+                            <button class="px-3 py-1 border border-rhuta-border rounded-lg hover:bg-rhuta-light-gray text-sm font-semibold">Anterior</button>
+                            <button class="px-3 py-1 border border-rhuta-border rounded-lg hover:bg-rhuta-light-gray text-sm font-semibold">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <footer class="bg-rhuta-blue text-white py-2 mt-auto">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+                    <div class="flex items-center gap-2">
+                        <div class="size-5">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="#00C694" /></svg>
+                        </div>
+                        <p class="text-white text-base font-bold font-raleway">RHUTA</p>
+                    </div>
+                </div>
+                <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+                    <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

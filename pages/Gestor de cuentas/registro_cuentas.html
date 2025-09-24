@@ -1,0 +1,256 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway%3Awght%40600%3B700&amp;family=Montserrat%3Awght%40400%3B600"
+    />
+
+    <title>RHUTA - Registro de Cuentas</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rhuta-blue': '#00325E',
+              'rhuta-green': '#00C694',
+              'rhuta-light-gray': '#EAEEEF',
+              'rhuta-dark-gray': '#1E1E1E',
+              'rhuta-border': '#DDE3EB'
+            },
+            fontFamily: {
+              'raleway': ['Raleway', 'sans-serif'],
+              'montserrat': ['Montserrat', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-rhuta-light-gray group/design-root overflow-x-hidden" style='font-family: Montserrat, sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header con navegación de Gestor de Cuentas -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-10 py-4 bg-rhuta-blue">
+          <div class="flex items-center gap-4">
+            <div class="size-8">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="#00C694"
+                />
+              </svg>
+            </div>
+            <p class="text-white text-2xl font-bold font-raleway">RHUTA</p>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a href="gestion_cuentas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Gestión de Cuentas</span>
+            </a>
+            <a href="registro_cuentas.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green">
+              <span class="font-montserrat font-semibold">Registro de Cuentas</span>
+            </a>
+            <a href="seguimiento_pagos.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors">
+              <span class="font-montserrat font-semibold">Seguimiento de Pagos</span>
+            </a>
+            <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
+              <span class="font-montserrat font-semibold">Cerrar Sesión</span>
+            </button>
+          </nav>
+        </header>
+        
+        <!-- Contenido principal -->
+        <div class="px-10 flex flex-1 justify-center py-8 bg-rhuta-light-gray">
+          <div class="layout-content-container flex flex-col max-w-7xl flex-1">
+            <!-- Título principal -->
+            <div class="flex flex-wrap justify-between gap-3 p-6 bg-white rounded-lg shadow-sm border border-rhuta-border mb-6">
+              <h1 class="text-rhuta-dark-gray text-4xl font-bold font-raleway leading-tight">Registro de Cuentas</h1>
+              <p class="text-rhuta-dark-gray text-lg font-montserrat">Registra nuevas cuentas de usuarios y empresas en la plataforma RHUTA</p>
+            </div>
+            
+            <!-- Pestañas de tipo de cuenta -->
+            <div class="bg-white rounded-lg shadow-sm border border-rhuta-border p-6 mb-6">
+              <div class="flex border-b border-rhuta-border mb-6">
+                <button class="flex items-center justify-center border-b-2 border-rhuta-green text-rhuta-green pb-4 px-6 font-semibold font-montserrat">
+                  <span class="mr-2">🏢</span>
+                  Registro de Empresa
+                </button>
+                <button class="flex items-center justify-center border-b-2 border-transparent text-rhuta-dark-gray hover:text-rhuta-green pb-4 px-6 font-semibold font-montserrat transition-colors">
+                  <span class="mr-2">👤</span>
+                  Registro de Usuario
+                </button>
+              </div>
+              
+              <!-- Formulario de registro de empresa -->
+              <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Nombre de la Empresa *</label>
+                    <input type="text" placeholder="Ingrese el nombre de la empresa" 
+                           class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+            </div>
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">NIT *</label>
+                    <input type="text" placeholder="Ej: 900123456-7" 
+                           class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+            </div>
+            </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Sector *</label>
+                    <select class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                      <option value="">Seleccione el sector</option>
+                      <option value="tecnologia">Tecnología</option>
+                      <option value="financiero">Financiero</option>
+                      <option value="salud">Salud</option>
+                      <option value="educacion">Educación</option>
+                      <option value="retail">Retail</option>
+                      <option value="manufactura">Manufactura</option>
+                      <option value="servicios">Servicios</option>
+                      <option value="otro">Otro</option>
+                </select>
+            </div>
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Tamaño de la Empresa *</label>
+                    <select class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                      <option value="">Seleccione el tamaño</option>
+                      <option value="micro">Micro (1-10 empleados)</option>
+                      <option value="pequena">Pequeña (11-50 empleados)</option>
+                      <option value="mediana">Mediana (51-200 empleados)</option>
+                      <option value="grande">Grande (201+ empleados)</option>
+                </select>
+            </div>
+            </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Dirección *</label>
+                    <input type="text" placeholder="Ingrese la dirección de la empresa" 
+                           class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+            </div>
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Ciudad *</label>
+                    <input type="text" placeholder="Ingrese la ciudad" 
+                           class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+            </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Teléfono de Contacto *</label>
+                    <input type="tel" placeholder="Ej: +57 300 123 4567" 
+                           class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                  </div>
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Email de Contacto *</label>
+                    <input type="email" placeholder="Ej: contacto@empresa.com" 
+                           class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+              </div>
+            </div>
+                
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Contacto de RRHH *</label>
+                  <input type="text" placeholder="Nombre completo del contacto de RRHH" 
+                         class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                </div>
+                
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Email de RRHH *</label>
+                  <input type="email" placeholder="Ej: rrhh@empresa.com" 
+                         class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                </div>
+                
+                <div>
+                  <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Áreas de Interés</label>
+                  <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-2">
+                    <label class="flex items-center">
+                      <input type="checkbox" class="mr-2 text-rhuta-green focus:ring-rhuta-green">
+                      <span class="text-sm font-montserrat">Desarrollo de Software</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="mr-2 text-rhuta-green focus:ring-rhuta-green">
+                      <span class="text-sm font-montserrat">Marketing Digital</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="mr-2 text-rhuta-green focus:ring-rhuta-green">
+                      <span class="text-sm font-montserrat">Data Science</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="mr-2 text-rhuta-green focus:ring-rhuta-green">
+                      <span class="text-sm font-montserrat">Diseño UI/UX</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="mr-2 text-rhuta-green focus:ring-rhuta-green">
+                      <span class="text-sm font-montserrat">DevOps</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="checkbox" class="mr-2 text-rhuta-green focus:ring-rhuta-green">
+                      <span class="text-sm font-montserrat">Product Management</span>
+                    </label>
+              </div>
+            </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Plan de Suscripción *</label>
+                    <select class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                      <option value="">Seleccione un plan</option>
+                      <option value="basico">Básico - $99/mes</option>
+                      <option value="premium">Premium - $199/mes</option>
+                      <option value="enterprise">Enterprise - $399/mes</option>
+                    </select>
+          </div>
+                  <div>
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Método de Pago *</label>
+                    <select class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                      <option value="">Seleccione método de pago</option>
+                      <option value="tarjeta">Tarjeta de Crédito</option>
+                      <option value="transferencia">Transferencia Bancaria</option>
+                      <option value="pse">PSE</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="bg-rhuta-light-gray rounded-lg p-4">
+                  <h3 class="text-rhuta-dark-gray text-lg font-bold font-raleway mb-3">Información de Acceso</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Usuario Administrador *</label>
+                      <input type="text" placeholder="Nombre de usuario para el administrador" 
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+                    </div>
+                    <div>
+                      <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Email del Administrador *</label>
+                      <input type="email" placeholder="Email del administrador de la cuenta" 
+                             class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+              </div>
+            </div>
+                  <div class="mt-4">
+                    <label class="block text-rhuta-dark-gray text-sm font-montserrat font-semibold mb-2">Contraseña Temporal *</label>
+                    <input type="password" placeholder="Contraseña temporal (se enviará por email)" 
+                           class="w-full px-4 py-3 border border-rhuta-border rounded-lg focus:outline-none focus:ring-2 focus:ring-rhuta-green focus:border-transparent">
+              </div>
+              </div>
+                
+                <div class="flex justify-end gap-4 pt-6">
+                  <button type="button" class="border border-rhuta-border text-rhuta-dark-gray hover:bg-rhuta-light-gray px-8 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                    Cancelar
+                  </button>
+                  <button type="submit" class="bg-rhuta-green hover:bg-[#00A77F] text-white px-8 py-3 rounded-lg font-semibold font-montserrat transition-colors">
+                    Registrar Empresa
+                  </button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

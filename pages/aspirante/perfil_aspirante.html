@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Raleway:wght@600;700&family=Montserrat:wght@400;600">
+  <title>RHUTA - Perfil Aspirante</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'rhuta-blue': '#00325E',
+            'rhuta-green': '#00C694',
+            'rhuta-light-gray': '#EAEEEF',
+            'rhuta-dark-gray': '#1E1E1E',
+            'rhuta-border': '#DDE3EB',
+          },
+          fontFamily: {
+            'raleway': ['Raleway', 'sans-serif'],
+            'montserrat': ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-rhuta-light-gray font-montserrat text-rhuta-dark-gray">
+
+  <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-rhuta-border px-4 py-4 md:px-10 bg-rhuta-blue">
+      <div class="flex items-center gap-4">
+        <a href="dashboard_aspirante.html" class="flex items-center gap-4">
+          <div class="size-8">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="#00C694" />
+            </svg>
+          </div>
+          <p class="text-white text-2xl font-bold font-raleway hidden md:block">RHUTA</p>
+        </a>
+      </div>
+      <nav class="flex items-center gap-2 md:gap-6" aria-label="Navegación principal">
+        <a href="dashboard_aspirante.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors font-semibold text-sm md:text-base">
+          Dashboard
+        </a>
+        <a href="perfil_aspirante.html" class="flex items-center gap-2 text-rhuta-green border-b-2 border-rhuta-green font-semibold text-sm md:text-base">
+          Mi Perfil
+        </a>
+        <a href="busqueda_vacantes.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors font-semibold text-sm md:text-base">
+          Buscar Vacantes
+        </a>
+        <a href="micro_rutas.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors font-semibold text-sm md:text-base hidden sm:flex">
+          Micro Rutas
+        </a>
+        <a href="postulaciones.html" class="flex items-center gap-2 text-white hover:text-rhuta-green transition-colors font-semibold text-sm md:text-base hidden sm:flex">
+          Postulaciones
+        </a>
+        <button class="flex items-center gap-2 text-white hover:text-red-400 transition-colors font-semibold text-sm md:text-base">
+          Cerrar Sesión
+        </button>
+      </nav>
+    </header>
+
+    <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-8 md:px-8">
+      <div class="flex flex-wrap items-baseline justify-between gap-3 p-4">
+        <h1 class="text-3xl md:text-4xl font-bold font-raleway text-rhuta-dark-gray">Mi Perfil 360°</h1>
+      </div>
+      
+      <form id="profile-form" class="space-y-8">
+        <section class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray mb-6">Datos Personales</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="form-group">
+              <label for="nombre" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3 placeholder:text-rhuta-border">
+            </div>
+            <div class="form-group">
+              <label for="apellido" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Apellido</label>
+              <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3 placeholder:text-rhuta-border">
+            </div>
+            <div class="form-group">
+              <label for="email" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Correo Electrónico</label>
+              <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3 placeholder:text-rhuta-border">
+            </div>
+            <div class="form-group">
+              <label for="telefono" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+57 300 123 4567" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3 placeholder:text-rhuta-border">
+            </div>
+            <div class="form-group">
+              <label for="tipo_documento" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Tipo de Documento</label>
+              <select id="tipo_documento" name="tipo_documento" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3">
+                <option value="">Selecciona</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="NIT">NIT</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="numero_documento" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Número de Documento</label>
+              <input type="text" id="numero_documento" name="numero_documento" placeholder="12345678" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3 placeholder:text-rhuta-border">
+            </div>
+            <div class="form-group">
+              <label for="genero" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Género</label>
+              <select id="genero" name="genero" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3">
+                <option value="">Selecciona</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+                <option value="O">Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fecha_nacimiento" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Fecha de Nacimiento</label>
+              <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3">
+            </div>
+            <div class="form-group">
+              <label for="pais" class="block text-base font-semibold text-rhuta-dark-gray pb-2">País de Residencia</label>
+              <input type="text" id="pais" name="pais" placeholder="Colombia" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3 placeholder:text-rhuta-border">
+            </div>
+            <div class="form-group">
+              <label for="ciudad" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Ciudad de Residencia</label>
+              <input type="text" id="ciudad" name="ciudad" placeholder="Bogotá" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3 placeholder:text-rhuta-border">
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray">Educación</h2>
+            <button type="button" id="toggle-education-form" class="flex items-center gap-2 text-rhuta-green hover:text-rhuta-blue transition-colors font-semibold">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+          <div id="education-form-container" class="hidden">
+            <div class="bg-rhuta-light-gray rounded-lg p-4 mb-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Institución</p>
+                  <input type="text" placeholder="Universidad Nacional de Colombia" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 placeholder:text-rhuta-border p-[15px] text-base font-normal leading-normal" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Título</p>
+                  <input type="text" placeholder="Ingeniería de Sistemas" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 placeholder:text-rhuta-border p-[15px] text-base font-normal leading-normal" />
+                </label>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Fecha de Inicio</p>
+                  <input type="date" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 p-[15px] text-base font-normal leading-normal" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Fecha de Fin</p>
+                  <input type="date" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 p-[15px] text-base font-normal leading-normal" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">En Curso</p>
+                  <div class="flex items-center h-14">
+                    <input type="checkbox" class="h-5 w-5 rounded border-rhuta-border border-2 bg-transparent text-rhuta-green checked:bg-rhuta-green focus:ring-0 focus:ring-offset-0 focus:border-rhuta-border focus:outline-none" />
+                    <span class="ml-2 text-rhuta-dark-gray text-base font-normal">Actualmente estudiando</span>
+                  </div>
+                </label>
+              </div>
+              <div class="flex justify-end mt-4">
+                <button type="button" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-rhuta-green text-white text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-rhuta-green">
+                  <span class="truncate">Guardar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="education-list" class="space-y-4">
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray">Experiencia Laboral</h2>
+            <button type="button" id="toggle-experience-form" class="flex items-center gap-2 text-rhuta-green hover:text-rhuta-blue transition-colors font-semibold">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+          <div id="experience-form-container" class="hidden">
+            <div class="bg-rhuta-light-gray rounded-lg p-4 mb-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Empresa</p>
+                  <input type="text" placeholder="TechCorp Solutions" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 placeholder:text-rhuta-border p-[15px] text-base font-normal leading-normal" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Cargo</p>
+                  <input type="text" placeholder="Desarrollador Full Stack" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 placeholder:text-rhuta-border p-[15px] text-base font-normal leading-normal" />
+                </label>
+              </div>
+              <div class="mt-4">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Descripción</p>
+                  <textarea placeholder="Describe tus responsabilidades y logros en este puesto" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue min-h-24 placeholder:text-rhuta-border p-[15px] text-base font-normal leading-normal"></textarea>
+                </label>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Fecha de Inicio</p>
+                  <input type="date" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 p-[15px] text-base font-normal leading-normal" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Fecha de Fin</p>
+                  <input type="date" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 p-[15px] text-base font-normal leading-normal" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Trabajo Actual</p>
+                  <div class="flex items-center h-14">
+                    <input type="checkbox" class="h-5 w-5 rounded border-rhuta-border border-2 bg-transparent text-rhuta-green checked:bg-rhuta-green focus:ring-0 focus:ring-offset-0 focus:border-rhuta-border focus:outline-none" />
+                    <span class="ml-2 text-rhuta-dark-gray text-base font-normal">Actualmente trabajando aquí</span>
+                  </div>
+                </label>
+              </div>
+              <div class="flex justify-end mt-4">
+                <button type="button" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-rhuta-green text-white text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-rhuta-green">
+                  <span class="truncate">Guardar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="experience-list" class="space-y-4">
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray">Habilidades</h2>
+            <button type="button" id="toggle-skill-form" class="flex items-center gap-2 text-rhuta-green hover:text-rhuta-blue transition-colors font-semibold">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+          <div id="skill-form-container" class="hidden">
+            <div class="bg-rhuta-light-gray rounded-lg p-4 mb-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Habilidad</p>
+                  <input type="text" placeholder="JavaScript" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 placeholder:text-rhuta-border p-[15px] text-base font-normal leading-normal" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Nivel</p>
+                  <select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 p-[15px] text-base font-normal leading-normal">
+                    <option value="">Selecciona nivel</option>
+                    <option value="básico">Básico</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                  </select>
+                </label>
+              </div>
+              <div class="flex justify-end mt-4">
+                <button type="button" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-rhuta-green text-white text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-rhuta-green">
+                  <span class="truncate">Guardar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="skill-list" class="space-y-4">
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray">Idiomas</h2>
+            <button type="button" id="toggle-language-form" class="flex items-center gap-2 text-rhuta-green hover:text-rhuta-blue transition-colors font-semibold">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+          <div id="language-form-container" class="hidden">
+            <div class="bg-rhuta-light-gray rounded-lg p-4 mb-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Idioma</p>
+                  <input type="text" placeholder="Inglés" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 placeholder:text-rhuta-border p-[15px] text-base font-normal leading-normal" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Nivel</p>
+                  <select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 p-[15px] text-base font-normal leading-normal">
+                    <option value="">Selecciona nivel</option>
+                    <option value="básico">Básico</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                  </select>
+                </label>
+              </div>
+              <div class="flex justify-end mt-4">
+                <button type="button" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-rhuta-green text-white text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-rhuta-green">
+                  <span class="truncate">Guardar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="language-list" class="space-y-4">
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray">Certificados Previos</h2>
+            <button type="button" id="toggle-certificate-form" class="flex items-center gap-2 text-rhuta-green hover:text-rhuta-blue transition-colors font-semibold">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+          <div id="certificate-form-container" class="hidden">
+            <div class="bg-rhuta-light-gray rounded-lg p-4 mb-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Título del Certificado</p>
+                  <input type="text" placeholder="Certificación AWS Solutions Architect" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 placeholder:text-rhuta-border p-[15px] text-base font-normal leading-normal" />
+                </label>
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Institución</p>
+                  <input type="text" placeholder="Amazon Web Services" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 placeholder:text-rhuta-border p-[15px] text-base font-normal leading-normal" />
+                </label>
+              </div>
+              <div class="mt-4">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-rhuta-dark-gray text-base font-semibold leading-normal pb-2">Fecha de Obtención</p>
+                  <input type="date" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-rhuta-dark-gray focus:outline-0 focus:ring-0 border border-rhuta-border bg-white focus:border-rhuta-blue h-14 p-[15px] text-base font-normal leading-normal" />
+                </label>
+              </div>
+              <div class="flex justify-end mt-4">
+                <button type="button" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-rhuta-green text-white text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-rhuta-green">
+                  <span class="truncate">Guardar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="certificate-list" class="space-y-4">
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-bold font-raleway text-rhuta-dark-gray mb-6">Documentos</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="form-group">
+              <label for="tipo_documento_file" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Tipo de Documento</label>
+              <select id="tipo_documento_file" name="tipo_documento_file" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3">
+                <option value="">Selecciona tipo</option>
+                <option value="CV">Hoja de Vida</option>
+                <option value="certificado">Certificado</option>
+                <option value="diploma">Diploma</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="file" class="block text-base font-semibold text-rhuta-dark-gray pb-2">Archivo</label>
+              <input type="file" id="file" name="file" accept=".pdf,.doc,.docx" class="form-input w-full rounded-lg border-rhuta-border focus:border-rhuta-blue focus:ring-rhuta-blue h-12 p-3">
+            </div>
+          </div>
+          <div class="flex justify-end mt-6">
+            <button type="button" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-rhuta-green text-white text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-rhuta-green">
+              <span class="truncate">Subir Documento</span>
+            </button>
+          </div>
+        </section>
+
+        <div class="flex flex-wrap justify-center gap-4 py-6">
+          <button type="button" id="preview-cv" class="flex min-w-[120px] max-w-[480px] items-center justify-center rounded-lg h-12 px-6 bg-rhuta-blue text-white font-semibold text-lg hover:bg-rhuta-blue-dark transition-colors">
+            Vista Previa
+          </button>
+          <button type="button" id="save-pdf" class="flex min-w-[120px] max-w-[480px] items-center justify-center rounded-lg h-12 px-6 bg-rhuta-green text-white font-semibold text-lg hover:bg-rhuta-green-dark transition-colors">
+            Guardar en PDF
+          </button>
+        </div>
+        
+        <section id="cv-section" class="bg-rhuta-light-gray rounded-lg shadow-md p-8 hidden">
+          <div id="cv-preview" class="bg-white rounded-lg p-8 border border-rhuta-border shadow-inner">
+            <header class="pb-6 border-b-2 border-rhuta-blue mb-6">
+              <h3 id="cv-name" class="text-4xl font-extrabold font-raleway text-rhuta-blue mb-1"></h3>
+              <p id="cv-title" class="text-lg font-bold text-rhuta-dark-gray"></p>
+              <p id="cv-contact" class="text-sm mt-2 text-rhuta-dark-gray"></p>
+            </header>
+
+            <div class="space-y-8">
+              <div>
+                <h4 class="text-xl font-bold font-raleway text-rhuta-blue border-b-2 border-rhuta-border pb-1 mb-4">Experiencia Profesional</h4>
+                <ul id="cv-experience-list" class="space-y-4"></ul>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold font-raleway text-rhuta-blue border-b-2 border-rhuta-border pb-1 mb-4">Educación</h4>
+                <ul id="cv-education-list" class="space-y-4"></ul>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold font-raleway text-rhuta-blue border-b-2 border-rhuta-border pb-1 mb-4">Habilidades</h4>
+                <div id="cv-skills-list" class="flex flex-wrap gap-2"></div>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold font-raleway text-rhuta-blue border-b-2 border-rhuta-border pb-1 mb-4">Idiomas</h4>
+                <div id="cv-languages-list" class="flex flex-wrap gap-2"></div>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold font-raleway text-rhuta-blue border-b-2 border-rhuta-border pb-1 mb-4">Certificados</h4>
+                <ul id="cv-certificates-list" class="space-y-4"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </form>
+    </main>
+  </div>
+      <!-- Footer -->
+      <footer class="bg-rhuta-blue text-white py-2">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+              <div class="size-5">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 34.0109 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                    fill="#00C694"
+                  />
+                </svg>
+              </div>
+              <p class="text-white text-base font-bold font-raleway">RHUTA</p>
+            </div>
+          </div>
+          <div class="border-t border-rhuta-border mt-2 pt-2 text-center">
+            <p class="text-white text-xs font-montserrat">© 2024 RHUTA. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('profile-form');
+      const cvSection = document.getElementById('cv-section');
+      const cvPreview = document.getElementById('cv-preview');
+
+      // Funcionalidad para mostrar/ocultar formularios
+      const toggleForm = (buttonId, containerId) => {
+        document.getElementById(buttonId).addEventListener('click', () => {
+          document.getElementById(containerId).classList.toggle('hidden');
+        });
+      };
+
+      toggleForm('toggle-education-form', 'education-form-container');
+      toggleForm('toggle-experience-form', 'experience-form-container');
+      toggleForm('toggle-skill-form', 'skill-form-container');
+      toggleForm('toggle-language-form', 'language-form-container');
+      toggleForm('toggle-certificate-form', 'certificate-form-container');
+
+      // Lógica para el botón de "Vista Previa"
+      document.getElementById('preview-cv').addEventListener('click', (e) => {
+        e.preventDefault();
+        updateCVPreview();
+        cvSection.classList.remove('hidden');
+        cvSection.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Lógica para actualizar la vista previa
+      const updateCVPreview = () => {
+        // Datos Personales
+        const nombre = document.getElementById('nombre').value || 'Nombre';
+        const apellido = document.getElementById('apellido').value || 'Apellido';
+        const email = document.getElementById('email').value || 'correo@ejemplo.com';
+        const telefono = document.getElementById('telefono').value || '+57 300 123 4567';
+        const ciudad = document.getElementById('ciudad').value || 'Ciudad';
+        const pais = document.getElementById('pais').value || 'País';
+
+        document.getElementById('cv-name').textContent = `${nombre} ${apellido}`;
+        document.getElementById('cv-title').textContent = 'Perfil Profesional'; // Puedes ajustar esto según el rol o la profesión
+        document.getElementById('cv-contact').textContent = `${email} | ${telefono} | ${ciudad}, ${pais}`;
+
+        // Limpiar listas anteriores
+        const experienceList = document.getElementById('cv-experience-list');
+        const educationList = document.getElementById('cv-education-list');
+        const skillsList = document.getElementById('cv-skills-list');
+        const languagesList = document.getElementById('cv-languages-list');
+        const certificatesList = document.getElementById('cv-certificates-list');
+
+        experienceList.innerHTML = '';
+        educationList.innerHTML = '';
+        skillsList.innerHTML = '';
+        languagesList.innerHTML = '';
+        certificatesList.innerHTML = '';
+
+        // Ejemplo de datos para la vista previa (esto debería ser dinámico)
+        const sampleExperience = [
+          { company: 'TechCorp Solutions', position: 'Desarrollador Full Stack', dates: '2022 - Presente', description: 'Responsable del desarrollo y mantenimiento de aplicaciones web, utilizando tecnologías como React y Node.js.' },
+          { company: 'Innovatech Ltda.', position: 'Analista de Datos', dates: '2020 - 2022', description: 'Encargado del análisis de grandes volúmenes de datos para la toma de decisiones estratégicas.' }
+        ];
+
+        const sampleEducation = [
+          { institution: 'Universidad Nacional de Colombia', degree: 'Ingeniería de Sistemas', dates: '2016 - 2021' },
+          { institution: 'SENA', degree: 'Tecnólogo en Desarrollo de Software', dates: '2014 - 2016' }
+        ];
+
+        const sampleSkills = [
+          { skill: 'JavaScript', level: 'Avanzado' },
+          { skill: 'Python', level: 'Intermedio' },
+          { skill: 'SQL', level: 'Avanzado' },
+          { skill: 'React', level: 'Avanzado' }
+        ];
+
+        const sampleLanguages = [
+          { language: 'Español', level: 'Nativo' },
+          { language: 'Inglés', level: 'Avanzado' }
+        ];
+        
+        const sampleCertificates = [
+          { title: 'Certificación AWS Solutions Architect', institution: 'Amazon Web Services', date: 'Mayo 2023' },
+          { title: 'Scrum Master Professional', institution: 'CertiProf', date: 'Enero 2022' }
+        ];
+
+        // Rellenar las listas de la vista previa
+        sampleExperience.forEach(exp => {
+          const li = document.createElement('li');
+          li.className = 'mb-4';
+          li.innerHTML = `
+            <h5 class="text-base font-bold text-rhuta-dark-gray">${exp.position} - <span class="font-normal text-rhuta-green">${exp.company}</span></h5>
+            <p class="text-sm text-rhuta-dark-gray/70">${exp.dates}</p>
+            <p class="text-sm mt-1">${exp.description}</p>
+          `;
+          experienceList.appendChild(li);
+        });
+
+        sampleEducation.forEach(edu => {
+          const li = document.createElement('li');
+          li.className = 'mb-4';
+          li.innerHTML = `
+            <h5 class="text-base font-bold text-rhuta-dark-gray">${edu.degree} - <span class="font-normal text-rhuta-green">${edu.institution}</span></h5>
+            <p class="text-sm text-rhuta-dark-gray/70">${edu.dates}</p>
+          `;
+          educationList.appendChild(li);
+        });
+        
+        sampleSkills.forEach(skill => {
+          const span = document.createElement('span');
+          span.className = 'bg-rhuta-light-gray text-rhuta-dark-gray rounded-full px-3 py-1 text-sm font-semibold';
+          span.textContent = `${skill.skill} (${skill.level})`;
+          skillsList.appendChild(span);
+        });
+
+        sampleLanguages.forEach(lang => {
+          const span = document.createElement('span');
+          span.className = 'bg-rhuta-light-gray text-rhuta-dark-gray rounded-full px-3 py-1 text-sm font-semibold';
+          span.textContent = `${lang.language} (${lang.level})`;
+          languagesList.appendChild(span);
+        });
+        
+        sampleCertificates.forEach(cert => {
+          const li = document.createElement('li');
+          li.className = 'mb-4';
+          li.innerHTML = `
+            <h5 class="text-base font-bold text-rhuta-dark-gray">${cert.title} - <span class="font-normal text-rhuta-green">${cert.institution}</span></h5>
+            <p class="text-sm text-rhuta-dark-gray/70">Fecha de Obtención: ${cert.date}</p>
+          `;
+          certificatesList.appendChild(li);
+        });
+      };
+
+      // Lógica para guardar en PDF
+      document.getElementById('save-pdf').addEventListener('click', () => {
+        // Actualiza la vista previa antes de guardar
+        updateCVPreview();
+        cvSection.classList.remove('hidden');
+        
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('p', 'pt', 'a4');
+        const element = document.getElementById('cv-preview');
+        const originalBgColor = cvPreview.style.backgroundColor;
+        
+        cvPreview.style.backgroundColor = '#ffffff';
+
+        html2canvas(element, {
+          scale: 2, // Aumentar la escala para mayor calidad
+        }).then(canvas => {
+          const imgData = canvas.toDataURL('image/png');
+          const imgProps = pdf.getImageProperties(imgData);
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+          
+          pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+          pdf.save('hoja_de_vida.pdf');
+          
+          cvPreview.style.backgroundColor = originalBgColor;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
